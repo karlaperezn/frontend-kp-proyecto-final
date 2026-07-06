@@ -1,0 +1,11 @@
+@import url('https://googleapis.com');
+
+:root {
+    --title-font: 'Luxurious Script', script;
+    --paragrahp-font: 'Space Grotesk', sans-serif;
+
+    --primary-color: #000;
+    --secondary-color: #f3f3f3;
+    --background-color: #fff;
+
+}
