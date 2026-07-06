@@ -17,7 +17,7 @@ export function Home() {
                 <h1>Nos Casamos</h1>
             </div>
             <div className="text-hero">
-                <h3>Comparte vuestro gran día con una invitación digital elegante, práctica y fácil de crear.</h3>
+                <h4>Comparte vuestro gran día con una invitación digital elegante, práctica y fácil de crear.</h4>
                 <div className="buttons-hero">
                     <Link className="button alt-button">Ver plantilla</Link>
                     <Link to='registrarse' className="button">Empezar gratis</Link>
