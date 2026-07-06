@@ -1,11 +1,42 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cinzel:wght@400..900&family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
     --title-font: 'Luxurious Script', script;
-    --paragrahp-font: 'Space Grotesk', sans-serif;
+    --paragraph-font: "Space Grotesk", sans-serif;
 
     --primary-color: #000;
-    --secondary-color: #f3f3f3;
-    --background-color: #fff;
+    --secondary-color: #b7b7b7;
+    --bckg-color: #fff;
 
+}
+body {
+    margin: 0;
+    font-family: var(--paragraph-font);
+    color: var(--primary-color);
+    background-color: var(--bckg-color);
+    font-weight: 300;
+}
+
+h1,
+h2 {
+    font-family: var(--title-font);
+    font-weight: lighter;
+    margin: 1.5rem;
+}
+
+h1 {
+    font-size: 128px;
+    line-height: 6rem;
+}
+h2 {
+    font-size: 72px,
+}
+
+h3, h4, h5, h6 {
+    font-family: var(--paragraph-font);
+    font-weight: 100;
+}
+
+h4 {
+    font-size: 20px;
 }
