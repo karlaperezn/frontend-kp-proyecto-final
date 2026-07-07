@@ -1,12 +1,12 @@
-//import { Link } from "react-router-dom"
-import '../CSS/registrarse.css'
+import { Link } from "react-router-dom"
+import "../CSS/registrarse.css"
 
 export function Registrarse() {
 
     return <div>
         <header>
-            <div className="logo"><span>Logo</span></div>
-            <div id="navBar">
+            <div><h3>Logo</h3></div>
+            <div className="navBar">
             </div>
         </header>
         <div id="register-screen">
@@ -14,19 +14,26 @@ export function Registrarse() {
             <span>Regístrate gratis para crear tu invitación de boda digital</span>
 
             <div className="basic-form">
-                <div className="input-label">
+                <div className="field-form">
                     <label>Nombre completo</label>
-                    <input type="text" id="name-register"/>
+                    <input type="text" required/>
                 </div>
-                <div className="input-label">
+                <div className="field-form">
                     <label>Correo electrónico</label>
-                    <input type="text" id="email-register"/>
+                    <input type="email" required/>
                 </div>
-                <div className="input-label">
+                <div className="field-form">
                     <label>Contraseña</label>
-                    <input type="text" id="password-register"/>
+                    <input type="password" required/>
                 </div>
-                <button>Crear cuenta</button>
+                <div className="field-checkbox">
+                    <input type="checkbox" id="terms-policy" className="checkbox"/>
+                    <label for="terms-policy">Acepto los términos y condiciones</label>
+                </div>
+                <button className="button">Crear cuenta</button>
+                <div>
+                <Link className="internal-link" to='/iniciar-sesion'>Ya tengo cuenta</Link>
+                </div>
 
             </div>
         </div>
