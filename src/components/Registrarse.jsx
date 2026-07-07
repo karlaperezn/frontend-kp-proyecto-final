@@ -1,11 +1,43 @@
 import { Link } from "react-router-dom"
 import "../CSS/registrarse.css"
+import { doPost } from "../services/api.services.js";
+import { getHtml } from "../services/html.services.js";
 
-export function Registrarse() {
+export function Registrarse({valuesNewUser, setValuesNewUser}) {
+
+    const handleChanges = (e) => {
+    setValuesNewUser({ ...valuesNewUser, [e.target.name]: e.target.value })
+  }
+
+   const signUpUser = async (e) => {
+    e.preventDefault()
+    console.log(valuesNewUser)
+
+    const res = await doPost(`users/register-user`, {
+      fullName: valuesNewUser.nameRegister,
+      email: valuesNewUser.emailRegister,
+      password: valuesNewUser.passwordRegister,
+    });
+
+    if (res.data) {
+      setValuesNewUser({
+        nameRegister: '',
+        emailRegister: '',
+        passwordRegister: ''
+      })
+    }
+
+    getHtml("register-message").innerText = "¡Listo! Ya puedes acceder a tu cuenta";
+
+  }
 
     return <div>
         <header>
-            <div><h3>Logo</h3></div>
+            <div>
+                <Link className="logo-link" to='/'>
+                    <h3>Logo</h3>
+                </Link>
+            </div>    
             <div className="navBar">
             </div>
         </header>
@@ -16,24 +48,25 @@ export function Registrarse() {
             <div className="basic-form">
                 <div className="field-form">
                     <label>Nombre completo</label>
-                    <input type="text" required/>
+                    <input type="text" value={valuesNewUser.nameRegister} name="nameRegister" onChange={(e) => handleChanges(e)} required/>
                 </div>
                 <div className="field-form">
                     <label>Correo electrónico</label>
-                    <input type="email" required/>
+                    <input type="email" value={valuesNewUser.emailRegister} name="emailRegister" onChange={(e) => handleChanges(e)} required/>
                 </div>
                 <div className="field-form">
                     <label>Contraseña</label>
-                    <input type="password" required/>
+                    <input type="password" value={valuesNewUser.passwordRegister} name="passwordRegister" onChange={(e) => handleChanges(e)} required/>
                 </div>
                 <div className="field-checkbox">
                     <input type="checkbox" id="terms-policy" className="checkbox"/>
-                    <label for="terms-policy">Acepto los términos y condiciones</label>
+                    <label htmlFor="terms-policy">Acepto los términos y condiciones</label>
                 </div>
-                <button className="button">Crear cuenta</button>
+                <button className="button" onClick={signUpUser}>Crear cuenta</button>
                 <div>
                 <Link className="internal-link" to='/iniciar-sesion'>Ya tengo cuenta</Link>
                 </div>
+                <p id="register-message" className="statusMessages"></p>
 
             </div>
         </div>

@@ -17,6 +17,11 @@ header {
     margin: auto;
 }
 
+.logo-link {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 .navBar { gap: 1rem;}
 
 /* start assets form */

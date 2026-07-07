@@ -8,6 +8,12 @@ import { Registrarse } from './components/Registrarse';
 
 function App() {
 
+  const [valuesNewUser, setValuesNewUser] = useState({
+    nameRegister: '',
+    emailRegister: '',
+    passwordRegister: ''
+  })
+
 
 
   return (
@@ -15,7 +21,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/iniciar-sesion' element={<IniciarSesion />} />
-        <Route path='/registrarse' element={<Registrarse />} />
+
+        <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
       </Routes>
     </BrowserRouter>
   );
