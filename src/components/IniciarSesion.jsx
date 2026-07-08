@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom"
+import { doPost } from "../services/api.services";
 
-export function IniciarSesion() {
+export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPasswordLogin }) {
+
+    async function login() {
+        const res = await doPost(`users/login`, {
+            email: emailLogin,
+            password: passwordLogin
+        });
+        if (res.status) {
+            saveUser(res.verifiedUser)
+        }
+    }
+
+    function saveUser(user) {
+        localStorage.setItem("id", user._id);
+        localStorage.setItem("email", user.email);
+        localStorage.setItem("fullName", user.fullName);
+    }
 
     return <div>
         <header>
@@ -19,13 +36,13 @@ export function IniciarSesion() {
             <div className="basic-form">
                 <div className="field-form">
                     <label>Correo electrónico</label>
-                    <input type="email" id="email-register" required />
+                    <input type="email" value={emailLogin} onChange={(e) => { setEmailLogin(e.target.value) }} required />
                 </div>
                 <div className="field-form">
                     <label>Contraseña</label>
-                    <input type="password" id="password-register" required />
+                    <input type="password" value={passwordLogin} onChange={(e) => { setPasswordLogin(e.target.value) }} required />
                 </div>
-                <button className="button">Iniciar sesión</button>
+                <button className="button" onClick={login}>Iniciar sesión</button>
                 <div>
                     <Link className="internal-link" to='/registrarse'>Aún no tengo cuenta</Link>
                 </div>

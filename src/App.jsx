@@ -7,12 +7,15 @@ import { IniciarSesion } from './components/IniciarSesion';
 import { Registrarse } from './components/Registrarse';
 
 function App() {
-
+  //Sign up
   const [valuesNewUser, setValuesNewUser] = useState({
     nameRegister: '',
     emailRegister: '',
     passwordRegister: ''
   })
+  //Log in
+  const [emailLogin, setEmailLogin] = useState('')
+  const [passwordLogin, setPasswordlLogin] = useState('')
 
 
 
@@ -20,7 +23,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/iniciar-sesion' element={<IniciarSesion />} />
+        <Route path='/iniciar-sesion' element={<IniciarSesion emailLogin={emailLogin} setEmailLogin={setEmailLogin} passwordLogin={passwordLogin} setPasswordLogin={setPasswordlLogin} />} />
 
         <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
       </Routes>

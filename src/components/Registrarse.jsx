@@ -11,7 +11,8 @@ export function Registrarse({valuesNewUser, setValuesNewUser}) {
 
    const signUpUser = async (e) => {
     e.preventDefault()
-    console.log(valuesNewUser)
+
+    //Falta que el front haga cheack de la existencia de otro usuario
 
     const res = await doPost(`users/register-user`, {
       fullName: valuesNewUser.nameRegister,
