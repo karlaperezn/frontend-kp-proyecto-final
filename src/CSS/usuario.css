@@ -1,0 +1,74 @@
+/*Section 1*/
+.section, #summary-panel, .summary-box, .summary-row2 {
+    display: flex;
+}
+
+.section {
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0.25rem;
+}
+
+#summary-panel {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.summary-box {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 33.33%;
+    height: 90px;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--bckg-color)
+}
+
+.summary-row2 {
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.summary-i {
+    font-size: 25px;
+}
+
+.num-summary {
+    font-size: 48px;
+}
+
+/*Section 2*/
+#table-guestslist {
+    width: 66.66%;
+}
+#table-guestslist table {
+    display: table-cell;
+    text-align: left;
+    border-collapse: collapse;
+    
+}
+
+#table-guestslist th, #table-guestslist td {
+    padding: 0.75rem 2.5rem 0.75rem 0.25rem;
+    
+}
+
+#table-guestslist tr {
+    border-bottom: 0.25px solid var(--primary-color);
+}
+
+#peoplelist-allergies {
+    width: 33.33%;
+    max-width: 300px;
+    height: 60vh;
+    background-color: var(--secondary-color);
+    padding: 0 1.5rem;
+    border-radius: 8px;
+}
