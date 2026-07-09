@@ -27,6 +27,18 @@ header {
 
 .navBar { gap: 1rem;}
 
+.section {
+    display: flex;
+    flex-direction: row;
+    margin: 2% auto;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0.25rem;
+}
+
 /* start assets form */
 
 .basic-form, .field-form { margin: 1rem 0; }

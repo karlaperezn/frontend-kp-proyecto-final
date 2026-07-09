@@ -1,23 +1,23 @@
 
 export function Section1Countdown(){
     
-    return <div className="section">
-        <h2>Conteo regresivo</h2>
-        <div>
+    return <div id="countdown-section" className="section">
+        <h2 className="h2-script">Conteo regresivo</h2>
+        <div id="countdown-row">
             <div className="countdown-box">
-                <span>284</span>
+                <span className="h3-sansserif">284</span>
                 <span>días</span>
             </div>
             <div className="countdown-box">
-                <span>07</span>
+                <span className="h3-sansserif">07</span>
                 <span>horas</span>
             </div>
             <div className="countdown-box">
-                <span>54</span>
+                <span className="h3-sansserif">54</span>
                 <span>minutos</span>
             </div>
             <div className="countdown-box">
-                <span>58</span>
+                <span className="h3-sansserif">58</span>
                 <span>segundos</span>
             </div>
         </div>

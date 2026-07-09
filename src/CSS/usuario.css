@@ -1,17 +1,6 @@
 /*Section 1*/
-.section, #summary-panel, .summary-box, .summary-row2 {
+#summary-panel, .summary-box, .summary-row2 {
     display: flex;
-}
-
-.section {
-    flex-direction: row;
-    margin: 2% auto;
-    width: 100%;
-    max-width: 1200px;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0.25rem;
 }
 
 #summary-panel {

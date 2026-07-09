@@ -18,13 +18,18 @@
 }
 body {
     margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+
     font-family: var(--sansserif-font);
     color: var(--primary-color);
     background-color: var(--bckg-color);
     font-weight: lighter;
+    overflow-x: hidden;
 }
 
-strong {
+strong, .strong {
     font-weight: 500;
 }
 
@@ -54,9 +59,9 @@ h1, h2, h3, h4, h5 {
 
 .h2-sansserif { font-weight: 500; font-size: 32px; line-height: 110%;}
 
-.h3-sansserif { font-weight: 400; font-size: 24px; line-height: 110%;}
+.h3-sansserif { font-weight: 200; font-size: 24px; line-height: 110%;}
 
-.h4-sansserif { font-weight: 300; font-size: 20px; line-height: 110%;}
+.h4-sansserif { font-weight: 200; font-size: 20px; line-height: 110%;}
 
 .paragraph { font-size: 16px; font-weight: 200;}
 
