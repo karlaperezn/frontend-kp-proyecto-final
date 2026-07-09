@@ -1,7 +1,7 @@
 import "../../CSS/usuario.css"
-import { HeaderUser } from "./Dashboard/HeaderUser"
-import { Section1DB } from "./Dashboard/Section1DB"
-import { Section2DB } from "./Dashboard/Section2DB"
+import { HeaderUser } from "./dashboardComponents/HeaderUser"
+import { Section1DB } from "./dashboardComponents/Section1DB"
+import { Section2DB } from "./dashboardComponents/Section2DB"
 
 export function Dashboard() {
 
