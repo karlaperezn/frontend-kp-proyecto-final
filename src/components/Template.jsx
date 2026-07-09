@@ -1,5 +1,5 @@
 import { HeroTemplate } from "./template/HeroTemplate"
-import { Section1_Countdown } from "./template/Section1Countdown"
+import { Section1Countdown } from "./template/Section1Countdown"
 import { Section2Location } from "./template/Section2Location"
 import "../CSS/template.css"
 
