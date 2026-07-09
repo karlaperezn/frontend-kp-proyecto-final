@@ -9,11 +9,11 @@ export function Home() {
 
         <div id="content-hero-home">
             <div className="title-hero">
-                <span id="span-hero-home">La mejor forma de decir:</span>
-                <h1>Nos Casamos</h1>
+                <span className="h3-sansserif" >La mejor forma de decir:</span>
+                <h1 className="h1-script">Nos Casamos</h1>
             </div>
             <div id="cta-hero-home">
-                <h4>Compartid vuestro gran día con una invitación digital elegante, práctica y fácil de crear.</h4>
+                <h4 className="h4-sansserif">Compartid vuestro gran día con una invitación digital elegante, práctica y fácil de crear.</h4>
                 <div className="buttons-div">
                     <Link className="button alt-button">Ver plantilla</Link>
                     <Link to='registrarse' className="button">Empezar gratis</Link>

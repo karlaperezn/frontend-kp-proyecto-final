@@ -5,7 +5,7 @@ export function HeaderUser() {
     return <header>
         <div>
             <Link className="logo-link" to='/'>
-                <h3>Logo</h3>
+                <h3 className="h3-sansserif">Logo</h3>
             </Link>
         </div>
         <div className="navBar">

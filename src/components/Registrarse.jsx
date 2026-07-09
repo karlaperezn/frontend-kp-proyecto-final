@@ -36,32 +36,32 @@ export function Registrarse({valuesNewUser, setValuesNewUser}) {
         <header>
             <div>
                 <Link className="logo-link" to='/'>
-                    <h3>Logo</h3>
+                    <h3 className="h3-sansserif">Logo</h3>
                 </Link>
-            </div>    
+            </div>   
             <div className="navBar">
             </div>
         </header>
         <div id="register-screen">
-            <h3>Crea tu cuenta</h3>
+            <h2 className="h2-sansserif">Crea tu cuenta</h2>
             <span>Regístrate gratis para crear tu invitación de boda digital</span>
 
             <div className="basic-form">
                 <div className="field-form">
-                    <label>Nombre completo</label>
+                    <label className="small-text">Nombre completo</label>
                     <input type="text" value={valuesNewUser.nameRegister} name="nameRegister" onChange={(e) => handleChanges(e)} required/>
                 </div>
                 <div className="field-form">
-                    <label>Correo electrónico</label>
+                    <label className="small-text">Correo electrónico</label>
                     <input type="email" value={valuesNewUser.emailRegister} name="emailRegister" onChange={(e) => handleChanges(e)} required/>
                 </div>
                 <div className="field-form">
-                    <label>Contraseña</label>
+                    <label className="small-text">Contraseña</label>
                     <input type="password" value={valuesNewUser.passwordRegister} name="passwordRegister" onChange={(e) => handleChanges(e)} required/>
                 </div>
                 <div className="field-checkbox">
                     <input type="checkbox" id="terms-policy" className="checkbox"/>
-                    <label htmlFor="terms-policy">Acepto los términos y condiciones</label>
+                    <label className="small-text" htmlFor="terms-policy">Acepto los términos y condiciones</label>
                 </div>
                 <button className="button" onClick={signUpUser}>Crear cuenta</button>
                 <div>

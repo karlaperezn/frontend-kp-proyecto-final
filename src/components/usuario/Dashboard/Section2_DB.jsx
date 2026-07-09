@@ -25,7 +25,7 @@ export function Section2_DB(){
             </table>
         </div>
         <div id="peoplelist-allergies">
-            <h4>Personas con restricciones alimentarias (#)</h4>
+            <h4 className="h4-sansserif">Personas con restricciones alimentarias (#)</h4>
             <ul>
                 <li>Nombre invitado - <strong>Mariscos</strong></li>
                 <li>Nombre invitado - <strong>Mariscos</strong></li>

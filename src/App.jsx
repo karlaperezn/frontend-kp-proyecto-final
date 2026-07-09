@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from './components/Home';
 import { IniciarSesion } from './components/IniciarSesion';
 import { Registrarse } from './components/Registrarse';
-import { Dashboard } from './components/usuario/Dashboard/Dashboard';
+import { Dashboard } from './components/usuario/Dashboard';
+import { Template } from './components/Template'
 
 function App() {
   //Sign up
@@ -26,8 +27,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
         <Route path='/iniciar-sesion' element={<IniciarSesion emailLogin={emailLogin} setEmailLogin={setEmailLogin} passwordLogin={passwordLogin} setPasswordLogin={setPasswordlLogin} />} />
-
         <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/template' element={<Template/>}/>
 
       </Routes>
     </BrowserRouter>

@@ -25,13 +25,12 @@ header {
 .navBar { gap: 1rem;}
 
 /* start assets form */
-label { font-weight: 400; font-size: 14px; }
 
 .basic-form, .field-form { margin: 1rem 0; }
 
 input, .button {
     border-radius: 4px; 
-    font-family: var(--parapgraph-font);
+    font-family: var(--sansserif-font);
     font-size: 16px;
     padding: 10px 12px;
 }

@@ -23,23 +23,23 @@ export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPas
         <header>
             <div>
                 <Link className="logo-link" to='/'>
-                    <h3>Logo</h3>
+                    <h3 className="h3-sansserif">Logo</h3>
                 </Link>
             </div>
             <div className="navBar">
             </div>
         </header>
         <div id="register-screen">
-            <h3>¡Bienvenido/a!</h3>
+            <h2 className="h2-sansserif">¡Bienvenido/a!</h2>
             <span>Ingresa tus datos para iniciar sesión en tu cuenta</span>
 
             <div className="basic-form">
                 <div className="field-form">
-                    <label>Correo electrónico</label>
+                    <label className="small-text">Correo electrónico</label>
                     <input type="email" value={emailLogin} onChange={(e) => { setEmailLogin(e.target.value) }} required />
                 </div>
                 <div className="field-form">
-                    <label>Contraseña</label>
+                    <label className="small-text">Contraseña</label>
                     <input type="password" value={passwordLogin} onChange={(e) => { setPasswordLogin(e.target.value) }} required />
                 </div>
                 <button className="button" onClick={login}>Iniciar sesión</button>

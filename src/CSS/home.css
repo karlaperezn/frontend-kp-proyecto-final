@@ -22,8 +22,6 @@
 .navbar-a-home:hover { color: var(--bckg-color); }
 /* end header home */
 
-#span-hero-home { font-size: 28px; }
-
 #cta-hero-home { margin: auto; width: 66.66%; }
 
 .buttons-div {

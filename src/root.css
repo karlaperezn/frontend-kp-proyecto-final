@@ -1,44 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cinzel:wght@400..900&family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
-    --title-font: 'Luxurious Script', script;
-    --paragraph-font: "Space Grotesk", sans-serif;
+    --script-font: 'Luxurious Script', script;
+    --sansserif-font: "Space Grotesk", sans-serif;
 
     --primary-color: #000;
     --secondary-color: #d1d1d1;
     --bckg-color: #fff;
 
+    /* wedding rsvp web */
+    --title-font-wedding: 'Luxurious Script', script;
+    --paragraph-font-wedding: "Space Grotesk", sans-serif;
+
+    --primary-color-wedding: #000;
+    --secondary-color-wedding: #d1d1d1;
+    --bckg-color-wedding: #fff;
 }
 body {
     margin: 0;
-    font-family: var(--paragraph-font);
+    font-family: var(--sansserif-font);
     color: var(--primary-color);
     background-color: var(--bckg-color);
-    font-weight: 300;
-}
-
-h1{
-    font-family: var(--title-font);
     font-weight: lighter;
-    margin: 1.5rem;
-    font-size: 128px;
-    line-height: 6rem;
-}
-h2 {
-    font-family: var(--paragraph-font);
-    font-size: 40px
 }
 
-h3 {
-    font-size: 28px;
-    margin: 0.25rem 0;
+strong {
+    font-weight: 500;
 }
 
-h4, h5, h6 {
-    font-family: var(--paragraph-font);
-    font-weight: 100;
+h1, h2, h3, h4, h5 {
+   margin: 0.25rem 0;
 }
 
-h4 {
-    font-size: 20px;
+/* TYPESCALE */
+/* script */
+.h1-script, .h2-script{
+    font-family: var(--script-font);
+    font-weight: lighter;
+    line-height: 80%;
+    margin:0.5rem;
 }
+
+.h1-script { font-size: 128px; }
+
+.h2-script { font-size: 72px; }
+
+/* sans serif */
+.h1-sansserif, .h2-sansserif, .h3-sansserif, .h4-sansserif, .paragraph, .small-text, .xsmall-text {
+    font-family: var(--sansserif-font);
+}
+
+.h1-sansserif { font-weight: 600; font-size: 40px; line-height: 110%;}
+
+.h2-sansserif { font-weight: 500; font-size: 32px; line-height: 110%;}
+
+.h3-sansserif { font-weight: 400; font-size: 24px; line-height: 110%;}
+
+.h4-sansserif { font-weight: 300; font-size: 20px; line-height: 110%;}
+
+.paragraph { font-size: 16px; font-weight: 200;}
+
+.small-text { font-size: 14px; font-weight: 400;}
+
+.xsmall-text { font-size: 12px; font-weight: 400;}
+
+/* wedding rsvp web */
+
+.h1-wedding, .h2-wedding{
+    font-family: var(--title-font-wedding);
+    font-weight: lighter;
+    line-height: 80%;
+}
+
+.h1-wedding { font-size: 128px; }
+
+.h2-wedding { font-size: 72px; }
+
+.h3-wedding, .h4-wedding, .paragraph-wedding, .small-text-wedding, .xsmall-text-wedding {
+    font-family: var(--paragraph-font-wedding);
+}
+
+.h3-wedding { font-weight: 400; font-size: 24px; }
+
+.h4-wedding { font-weight: light; font-size: 20px; }
+
+.paragraph-wedding { font-weight: light; font-size: 16px; }
+
+.small-text-wedding { font-weight: light; font-size: 14px; }
