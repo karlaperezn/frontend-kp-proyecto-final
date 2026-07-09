@@ -8,5 +8,6 @@ export function Template(){
     return <>
     <HeroTemplate/>
     <Section1Countdown/>
+    <Section2Location/>
     </>
 }
