@@ -1,5 +1,5 @@
 
-export function Section2_DB(){
+export function Section2DB(){
     
     return <div id="section2_dashboard" className="section">
         <div id="table-guestslist">

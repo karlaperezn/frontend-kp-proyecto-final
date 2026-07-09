@@ -1,5 +1,5 @@
 
-export function Section2_Location(){
+export function Section2Location(){
 
     return <div>
         <div className="section">

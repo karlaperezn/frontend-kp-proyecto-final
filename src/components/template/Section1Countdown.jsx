@@ -1,5 +1,5 @@
 
-export function Section1_Countdown(){
+export function Section1Countdown(){
     
     return <div className="section">
         <h2>Conteo regresivo</h2>

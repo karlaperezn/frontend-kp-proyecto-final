@@ -1,5 +1,5 @@
 
-export function Section1_DB(){
+export function Section1DB(){
 
 
     return <div id="section1-dasboard" className="section">
