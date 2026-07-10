@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 export function HeaderUser() {
+    const fullName = localStorage.getItem('fullName')
 
     return <header>
         <div>
@@ -12,8 +13,8 @@ export function HeaderUser() {
             <p>Panel RSVP</p>
             <p>Ver invitación</p>
             <p>|</p>
-            <p>Maricarmen</p>
-            <div className="avatarProfile"><i class="fa-regular fa-user"></i></div>
+            {/* Pendiente de volverlo link */} <p>{fullName}</p>
+            <div className="avatarProfile"><i className="fa-regular fa-user"></i></div>
         </div>
     </header>
 }

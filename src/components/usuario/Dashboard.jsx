@@ -1,14 +1,14 @@
 import "../../CSS/usuario.css"
-import { HeaderUser } from "./dashboardComponents/HeaderUser"
-import { Section1DB } from "./dashboardComponents/Section1DB"
-import { Section2DB } from "./dashboardComponents/Section2DB"
+import { HeaderUser } from "./dashboardComponent/HeaderUser"
+import { Section1DB } from "./dashboardComponent/Section1DB"
+import { Section2DB } from "./dashboardComponent/Section2DB"
 
-export function Dashboard() {
+export function Dashboard({weddings, setWeddings}) {
 
 
     return <div>
         <HeaderUser />
-        <Section1DB />
+        <Section1DB weddings={weddings} setWeddings={setWeddings} />
         <Section2DB/>
     </div>
 }

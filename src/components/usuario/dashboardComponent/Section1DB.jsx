@@ -1,10 +1,10 @@
 
-export function Section1DB(){
+export function Section1DB({weddings, setWeddings}){
 
 
     return <div id="section1-dasboard" className="section">
             <div>
-                <h2 className="h2-sansserif">Boda de Amelia & Juan</h2>
+                <h2 className="h2-sansserif">Boda de {weddings[0].brideName} & {weddings[0].groomName}</h2>
                 <h4 className="h4-sansserif">Listado de invitados</h4>
             </div>
             <div id="summary-panel">

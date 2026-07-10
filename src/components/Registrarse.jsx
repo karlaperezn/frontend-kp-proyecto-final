@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
 import "../CSS/registrarse.css"
+import { Link } from "react-router-dom"
 import { doPost } from "../services/api.services.js";
 import { getHtml } from "../services/html.services.js";
 

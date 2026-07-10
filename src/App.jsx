@@ -1,12 +1,13 @@
 import './App.css';
 import './root.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from './components/Home';
 import { IniciarSesion } from './components/IniciarSesion';
 import { Registrarse } from './components/Registrarse';
 import { Dashboard } from './components/usuario/Dashboard';
 import { Template } from './components/Template'
+import { doGet } from './services/api.services';
 
 function App() {
   //Sign up
@@ -19,7 +20,26 @@ function App() {
   const [emailLogin, setEmailLogin] = useState('')
   const [passwordLogin, setPasswordlLogin] = useState('')
 
+  //weddings
+  const [weddings, setWeddings] = useState([])
+  console.log(weddings)
+  const [collabs, setCollabs] = useState([])
 
+   useEffect(() => {
+    async function fetchWeddings() {
+      const userId = localStorage.getItem('id')
+      const res =  await doGet(`weddings/my-weddings/${userId}`)
+      setWeddings(res.weddingsByMe)
+    }
+    fetchWeddings()
+  }, [])
+
+  /* useEffect(() => {
+    const userId = localStorage.getItem('id')
+    const res = doGet(`/my-collabs/${userId}`)
+    console.log(res)
+  }, [])
+ */
 
   return (
     <BrowserRouter>
@@ -27,7 +47,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
         <Route path='/iniciar-sesion' element={<IniciarSesion emailLogin={emailLogin} setEmailLogin={setEmailLogin} passwordLogin={passwordLogin} setPasswordLogin={setPasswordlLogin} />} />
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/dashboard' element={<Dashboard weddings={weddings} setWeddings={setWeddings} />}/>
         <Route path='/template' element={<Template/>}/>
 
       </Routes>
