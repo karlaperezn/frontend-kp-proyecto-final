@@ -22,8 +22,9 @@ function App() {
 
   //weddings
   const [weddings, setWeddings] = useState([])
-  console.log(weddings)
   const [selectedWedding, setSelectedWedding] = useState([])
+  const [guestsResponses, setGuestsResponses] = useState([])
+  console.log(guestsResponses)
 
 
   useEffect(() => {
@@ -35,6 +36,14 @@ function App() {
     fetchWeddings()
   }, [])
 
+  useEffect(() => {
+    async function fetchGuestsResponses(){
+      const weddingId = selectedWedding._id;
+      const res = await doGet(`guests/show-responses/${weddingId}`)
+      setGuestsResponses(res.guestsResponses)
+    }
+    fetchGuestsResponses()
+  }, [selectedWedding])
 
 
 
