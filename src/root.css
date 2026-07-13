@@ -4,9 +4,9 @@
     --script-font: 'Luxurious Script', script;
     --sansserif-font: "Space Grotesk", sans-serif;
 
-    --primary-color: #000;
-    --secondary-color: #d1d1d1;
-    --bckg-color: #fff;
+    --primary-color: #838969;
+    --secondary-color: #414C3A;
+    --bckg-color: #fffdfa;
 
     /* wedding rsvp web */
     --title-font-wedding: 'Luxurious Script', script;
@@ -23,7 +23,7 @@ body {
     width: 100%;
 
     font-family: var(--sansserif-font);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     background-color: var(--bckg-color);
     font-weight: lighter;
     overflow-x: hidden;
