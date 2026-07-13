@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Section1DB } from "./dashboardComponents/Section1DB";
 import { Section2DB } from "./dashboardComponents/Section2DB";
 
-export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses }) {
+export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses }) {
     const fullName = localStorage.getItem('fullName')
 
     return <div>
@@ -21,7 +21,7 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
                 <div className="avatarProfile"><i className="fa-solid fa-user"></i></div>
             </div>
         </header>
-        <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} />
+        <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />
         <Section2DB guestsResponses={guestsResponses} />
     </div>
 }

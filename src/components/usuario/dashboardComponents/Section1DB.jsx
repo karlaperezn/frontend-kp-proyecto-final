@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
 
-
-export function Section1DB({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses }) {
+export function Section1DB({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses }) {
 
     function selectWedding(e) {
         let value = e.target.value;
-
+        if (value == "") {
+            setSelectedWedding([])
+            setGuestsResponses([])
+            return;
+        }
         let wedding = weddings.find(w => w._id === value);
         setSelectedWedding(wedding)
     }
@@ -13,22 +17,27 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
     const confirmed = guestsResponses.filter(g => g.attending === true).length.toString().padStart(2, '0');
     const declined = guestsResponses.filter(g => g.attending === false).length.toString().padStart(2, '0');
 
-    
+
 
     return <div id="section1-dasboard" className="section">
         <div>
 
             <h2 className="h2-sansserif">Gestión de invitados</h2>
+            <div id="selectWedding-or-createOne-div">
+                <div>
+                    <select onChange={selectWedding} className="dropdown-weddings">
+                        <option value="">Elige una boda</option>
+                        {weddings.map(w => {
+                            return <>
+                                <option key={w._id} value={w._id}>Boda de {w.brideName} & {w.groomName} ({w.role})</option>
+                            </>
+                        })}
+                    </select>
 
-            <select onChange={selectWedding} className="dropdown-weddings">
-                <option value="">Elige una boda</option>
-                {weddings.map(w => {
-                    return <>
-                        <option key={w._id} value={w._id}><i class="fa-solid fa-heart"></i> Boda de {w.brideName} & {w.groomName} ({w.role})</option>
-                    </>
-                })}
-                <option value="">+ Crea una nueva invitación</option>
-            </select>
+                </div>
+                <Link className="button alt-button light-bckg">Nueva invitación</Link>
+            </div>
+
         </div>
         <div id="summary-panel">
             <div className="summary-box">

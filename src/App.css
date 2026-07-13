@@ -82,8 +82,14 @@ input:focus {
 .alt-button { background-color: transparent }
 
 .button:hover {
+    outline: none;
+    color: var(--bckg-color);
     border: 1.25px solid transparent;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: var(--secondary-color);
+}
+
+.light-bckg {
+    color: var(--secondary-color);
 }
 
 .internal-link {

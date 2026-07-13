@@ -6,7 +6,7 @@ export function Section2DB({ guestsResponses }) {
             <table>
                 <thead>
                     <tr>
-                        <th>No.</th>
+                        <th>NO.</th>
                         <th>NOMBRE</th>
                         <th>CORREO ELECTRÓNICO</th>
                         <th>ASISTENCIA</th>
