@@ -1,0 +1,184 @@
+#title-wedding {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+
+}
+
+.inputW-edit {
+    box-sizing: border-box;
+    background: transparent;
+    outline: none;
+    border: none;
+    resize: none;
+    padding: 0.5rem;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    line-height: auto;
+    color: var(--bckg-color-wedding);
+    border: 1px dashed #ffffff3b;
+    cursor: pointer;
+}
+
+.inputW-place,
+.inputW-address {
+    text-align: center;
+}
+
+#inputW-hero-date {
+    margin: auto;
+    text-align: center;
+
+}
+
+.inputW-location-date {
+    width: 100%;
+    max-width: 65px;
+}
+
+.inputW-edit:focus,
+.inputW-edit:hover {
+    border: 1px solid var(--primary-color-wedding);
+}
+
+.brideName-input {
+    text-align: right;
+}
+
+.input-date {
+    text-align: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+input[type="date"] {
+    background-image: none !important;
+}
+
+#location-section-w {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    column-gap: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color-wedding);
+    color: var(--bckg-color-wedding);
+
+}
+
+.button-wedding {
+    background-color: var(--primary-color-wedding);
+}
+
+.button-wedding:hover {
+    background-color: var(--seconday-color-wedding);
+}
+
+.container-dateW {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 0.3rem;
+}
+
+
+
+/* form */
+
+#form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.option-attending label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    width: 100%;
+    border: 1px solid #e7dfd3;
+    border-radius: 4px;
+    padding: 10px 12px;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+#container-options-attending {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    
+}
+
+.option-attending{
+    width: 50%;
+    margin: 0.25rem;
+}
+
+.option-attending input[type="radio"] {
+    display: none;
+}
+
+.option-attending:hover label, .option-attending input[type="radio"]:checked + label {
+    color: var(--bckg-color-wedding);
+    border: 1px solid var(--primary-color-wedding);
+    background-color: var(--primary-color-wedding);
+}
+
+#container-options-dietary{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin-top: 0.25rem;
+}
+
+.option-dietary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+}
+
+input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+input[type="checkbox"]:checked{
+    background-color: var(--primary-color-wedding)
+}
+
+#textareaGuest {
+    display: flex;
+    flex-direction: column;
+}
+
+#guestMessage {
+    resize: none;
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    border: 1px solid #e7dfd3;
+    border-radius: 4px;
+    outline: none;
+    font-family: var(--paragraph-font-wedding);
+
+    color: var(--primary-color-wedding);
+}
+
+#guestMessage:focus {
+    outline: none;
+    border: 1px solid var(--primary-color-wedding);
+}

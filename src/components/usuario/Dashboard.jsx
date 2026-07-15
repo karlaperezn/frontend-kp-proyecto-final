@@ -18,7 +18,7 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
                 <p>Ver invitación</p>
                 <p>|</p>
                 {/* Pendiente de volverlo link */} <p><strong>{fullName}</strong></p>
-                <div className="avatarProfile"><i className="fa-solid fa-user"></i></div>
+                <div className="avatarProfile"><i className="fa-solid fa-user" /></div>
             </div>
         </header>
         <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />

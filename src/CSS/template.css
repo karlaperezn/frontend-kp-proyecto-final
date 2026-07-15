@@ -34,8 +34,10 @@
 #countdown-section {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     margin: 120px auto;
+    height: 40vh;
 }
 
 #countdown-row {
@@ -56,7 +58,8 @@
     justify-content: center;
     row-gap: 4px;
     border-radius: 4px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--bckg-color);
 }
 
 /* location */
@@ -71,10 +74,15 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-
 }
+
 
 .divider-line {
     border-left: 1px solid var(--primary-color);
     padding-left: 50px;
+}
+
+.info-location {
+    display: flex;
+    flex-direction: column;
 }

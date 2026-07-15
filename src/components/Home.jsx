@@ -4,7 +4,7 @@ import "../CSS/home.css"
 
 export function Home() {
 
-    return <div className="hero-section">
+    return <div id="hero-home" className="hero-section">
         <HeaderHome/>
 
         <div id="content-hero-home">

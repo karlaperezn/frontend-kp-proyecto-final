@@ -12,9 +12,9 @@
     --title-font-wedding: 'Luxurious Script', script;
     --paragraph-font-wedding: "Space Grotesk", sans-serif;
 
-    --primary-color-wedding: #000;
-    --secondary-color-wedding: #d1d1d1;
-    --bckg-color-wedding: #fff;
+    --primary-color-wedding: #838969;
+    --secondary-color-wedding:#414C3A;
+    --bckg-color-wedding: #fffdfa;;
 }
 body {
     margin: 0;
@@ -82,13 +82,13 @@ h1, h2, h3, h4, h5 {
 .h2-wedding { font-size: 72px; }
 
 .h3-wedding, .h4-wedding, .paragraph-wedding, .small-text-wedding, .xsmall-text-wedding {
-    font-family: var(--paragraph-font-wedding);
+    font-family: var(--paragraph-font-wedding) ;
 }
 
-.h3-wedding { font-weight: 400; font-size: 24px; }
+.h3-wedding { font-weight: lighter; font-size: 24px; }
 
-.h4-wedding { font-weight: light; font-size: 20px; }
+.h4-wedding { font-weight: lighter; font-size: 20px; }
 
-.paragraph-wedding { font-weight: light; font-size: 16px; }
+.paragraph-wedding { font-weight: lighter; font-size: 16px;}
 
-.small-text-wedding { font-weight: light; font-size: 14px; }
+.small-text-wedding { font-weight: lighter; font-size: 14px; }

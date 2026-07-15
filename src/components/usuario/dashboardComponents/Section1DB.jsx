@@ -35,7 +35,7 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
                     </select>
 
                 </div>
-                <Link className="button alt-button light-bckg">Nueva invitación</Link>
+                <Link to='/nueva-boda' className="button alt-button light-bckg">Nueva invitación</Link>
             </div>
 
         </div>

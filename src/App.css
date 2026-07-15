@@ -56,7 +56,7 @@ input, .button {
 }
 
 input {
-    border: 1.25px solid var(--secondary-color); 
+    border: 1.25px solid #e7dfd3; 
     width: 100%;
     color: var(--primary-color);
     outline: none;
