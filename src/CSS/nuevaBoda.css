@@ -1,3 +1,52 @@
+/* font wedding rsvp web */
+
+.h1-NB, .h2-NB{
+    font-family: var(--font-title-wedding);
+    color: var();
+    font-weight: lighter;
+    line-height: 80%;
+}
+
+.h1-NB { font-size: 96px; }
+
+.h2-NB { font-size: 52px; }
+
+.h3-NB, .h4-NB, .paragraph-NB, .small-text-NB, .xsmall-text-NB {
+    font-family: var(--font-body-wedding) ;
+    color: var();
+}
+
+.h3-NB { font-weight: 200; font-size: 32px; }
+
+.h4-NB { font-weight: 200; font-size: 24px; }
+
+.paragraph-NB { font-weight: 200; font-size: 16px;}
+
+.small-text-NB { font-weight: 200; font-size: 14px; }
+
+
+/* font wedding rsvp web */
+
+.button-NB {
+    border-radius: 4px; 
+    font-family: var(--font-body-wedding);
+    font-size: 16px;
+    padding: 10px 12px;
+    margin: 1rem 0;
+    background-color: var(--color-1-wedding);
+    color: var(--bckg-color);
+    border: 1.25px solid var(--color-1-wedding);
+    text-decoration: none;
+}
+
+.button-NB:hover {
+    outline: none;
+    color: var(--bckg-color);
+    border: 1.25px solid transparent;
+    background-color: var(--color-2-wedding);
+}
+
+
 #title-wedding {
     display: flex;
     flex-direction: row;
@@ -5,6 +54,18 @@
     align-items: baseline;
     width: 100%;
 
+}
+
+.input-NB {
+    color: var(--color-2-wedding);
+}
+
+.input-NB:focus {
+    border: 1px solid var(--color-1-wedding);
+}
+
+.checkbox-NB {
+    border: 1px solid var(--color-2-wedding);
 }
 
 .inputW-edit {
@@ -41,7 +102,7 @@
 
 .inputW-edit:focus,
 .inputW-edit:hover {
-    border: 1px solid var(--primary-color-wedding);
+    border: 1px solid var(--color-1-wedding);
 }
 
 .brideName-input {
@@ -61,6 +122,30 @@ input[type="date"] {
     background-image: none !important;
 }
 
+#countdown-section-NB {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 120px auto;
+    height: 40vh;
+    color: var(--color-2-wedding);
+}
+
+
+.countdown-box-NB {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 95px;
+    padding: 2rem 0.25rem;
+    justify-content: center;
+    row-gap: 4px;
+    border-radius: 4px;
+    background-color: var(--color-1-wedding);
+    color: var(--bckg-color);
+}
+
 #location-section-w {
     display: flex;
     width: 100%;
@@ -68,17 +153,26 @@ input[type="date"] {
     column-gap: 50px;
     align-items: center;
     justify-content: center;
-    background-color: var(--secondary-color-wedding);
+    background-color: var(--color-2-wedding);
     color: var(--bckg-color-wedding);
 
 }
 
+.divider-line-NB {
+    border-left: 1px solid var(--color-1-wedding);
+    padding-left: 50px;
+}
+
+#location-section-w h2 {
+    color: var(--bckg-color-wedding);
+}
+
 .button-wedding {
-    background-color: var(--primary-color-wedding);
+    background-color: var(--color-1-wedding);
 }
 
 .button-wedding:hover {
-    background-color: var(--seconday-color-wedding);
+    background-color: var(--color-2-wedding);
 }
 
 .container-dateW {
@@ -98,6 +192,15 @@ input[type="date"] {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: var(--color-2-wedding);
+}
+
+#form-section label {
+    font-family: var(--font-body-wedding);
+}
+
+.title-field-NB {
+    font-weight: 400;
 }
 
 .option-attending label {
@@ -109,6 +212,7 @@ input[type="date"] {
     border-radius: 4px;
     padding: 10px 12px;
     background-color: white;
+    font-weight: 400;
     cursor: pointer;
 
 }
@@ -131,8 +235,8 @@ input[type="date"] {
 
 .option-attending:hover label, .option-attending input[type="radio"]:checked + label {
     color: var(--bckg-color-wedding);
-    border: 1px solid var(--primary-color-wedding);
-    background-color: var(--primary-color-wedding);
+    border: 1px solid var(--color-1-wedding);
+    background-color: var(--color-1-wedding);
 }
 
 #container-options-dietary{
@@ -157,7 +261,7 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]:checked{
-    background-color: var(--primary-color-wedding)
+    background-color: var(--color-1-wedding)
 }
 
 #textareaGuest {
@@ -175,10 +279,110 @@ input[type="checkbox"]:checked{
     outline: none;
     font-family: var(--paragraph-font-wedding);
 
-    color: var(--primary-color-wedding);
+    color: var(--color-2-wedding);
 }
 
 #guestMessage:focus {
     outline: none;
-    border: 1px solid var(--primary-color-wedding);
+    border: 1px solid var(--color-1-wedding);
+}
+
+/* Panel de diseño */
+
+#panelDiseno {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--bckg-color-wedding);
+    width: 200px;
+    height: 94vh;
+    padding: 24px;
+    row-gap: 2rem;
+    border-radius: 16px;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.1);
+    z-index: 100;
+
+}
+
+/* Preview tipos */
+#h4-clasico, #h4-artesanal, #h4-elegante {
+    font-weight: lighter;
+    line-height: 0.75rem;
+    color: black;
+}
+
+#p-clasico, #p-artesanal, #p-elegante {
+    color: grey;
+}
+
+#h4-clasico {
+    font-family: 'Luxurious Script';
+    font-size: 50px;
+}
+
+#p-clasico {
+    font-family: 'Space Grotesk';
+    font-size: 14px;
+
+}
+
+#h4-artesanal {
+    font-family: 'Cedarville Cursive';
+    font-size: 30px;
+}
+
+#p-artesanal {
+    font-family: 'Red Hat Mono';
+    font-size: 14px;
+}
+
+#h4-elegante {
+    font-family: 'Cinzel';
+    font-size: 25px;
+}
+
+#p-elegante {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* */
+
+.option-container {
+    display: flex;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    margin: 0.25rem 0;
+    transition: border-color 0.2s ease;
+}
+
+.font-option {
+    padding: 1.5rem 1rem 0.1rem 1rem;
+}
+
+.colors-option {
+    padding: 0.5rem;
+}
+
+.option-container:hover {
+    border-color: black;
+}
+
+.option-container.seleccionado {
+    border: 1px solid black;
+    background-color: #faf9f7;
+}
+
+.fonts-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.color-preview {
+    width: 100px;
+    height: 40px;
 }

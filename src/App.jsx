@@ -61,9 +61,8 @@ function App() {
       hour: '19:15',
     },
     design: {
-      fontTitle: 'Luxurious Script',
-      fontBody: '"Space Grotesk", sans-serif',
-      colors: ['#838969', '#414C3A', '#fffdfa']
+      tipography: ['Luxurious Script', 'Space Grotesk'],
+      colors: ['#838969', '#414C3A']
     }
   })
 

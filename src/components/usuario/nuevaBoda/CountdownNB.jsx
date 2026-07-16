@@ -29,24 +29,24 @@ export function CountdownNB({ newWedding, setNewWedding }) {
     }, [newWedding.eventDate])
 
 
-    return <div id="countdown-section" className="section">
-        <h2 className="h2-script">Conteo regresivo</h2>
+    return <div id="countdown-section-NB" className="section">
+        <h2 className="h2-NB">Conteo regresivo</h2>
         <div id="countdown-row">
-            <div className="countdown-box">
-                <span className="h3-sansserif">{timeLeft.days}</span>
-                <span>días</span>
+            <div className="countdown-box-NB">
+                <span className="h3-NB">{timeLeft.days}</span>
+                <span className="paragraph-NB">días</span>
             </div>
-            <div className="countdown-box">
-                <span className="h3-sansserif">{timeLeft.hours}</span>
-                <span>horas</span>
+            <div className="countdown-box-NB">
+                <span className="h3-NB">{timeLeft.hours}</span>
+                <span className="paragraph-NB">horas</span>
             </div>
-            <div className="countdown-box">
-                <span className="h3-sansserif">{timeLeft.mins}</span>
-                <span>minutos</span>
+            <div className="countdown-box-NB">
+                <span className="h3-NB">{timeLeft.mins}</span>
+                <span className="paragraph-NB">minutos</span>
             </div>
-            <div className="countdown-box">
-                <span className="h3-sansserif">{timeLeft.secs}</span>
-                <span>segundos</span>
+            <div className="countdown-box-NB">
+                <span className="h3-NB">{timeLeft.secs}</span>
+                <span className="paragraph-NB">segundos</span>
             </div>
         </div>
     </div>
