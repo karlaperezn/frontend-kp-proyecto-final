@@ -4,7 +4,7 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
 
     function selectWedding(e) {
         let value = e.target.value;
-        if (value == "") {
+        if (value === "") {
             setSelectedWedding([])
             setGuestsResponses([])
             return;
@@ -14,9 +14,8 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
     }
 
     const totalResp = guestsResponses.filter(g => g._id).length.toString().padStart(2, '0');
-    const confirmed = guestsResponses.filter(g => g.attending == true).length.toString().padStart(2, '0');
-    const declined = guestsResponses.filter(g => g.attending == false).length.toString().padStart(2, '0');
-
+    const confirmed = guestsResponses.filter(g => g.attending === true).length.toString().padStart(2, '0');
+    const declined = guestsResponses.filter(g => g.attending === false).length.toString().padStart(2, '0');
 
     return <div id="section1-dasboard" className="section">
         <div>
