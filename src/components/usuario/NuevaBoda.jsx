@@ -1,4 +1,6 @@
 import "../../CSS/nuevaBoda.css"
+import { doPost } from "../../services/api.services"
+import { useNavigate } from "react-router-dom"
 import { HomeNB } from "./nuevaBoda/HomeNB"
 import { CountdownNB } from "./nuevaBoda/CountdownNB"
 import { UbicacionNB } from "./nuevaBoda/UbicacionNB"
@@ -7,6 +9,8 @@ import { PanelDisenoNB } from "./nuevaBoda/PanelDisenoNB"
 
 
 export function NuevaBoda({ newWedding, setNewWedding }) {
+
+    const navigate = useNavigate()
 
     const handleChanges = (e) => {
         const { name, value } = e.target;
@@ -20,6 +24,25 @@ export function NuevaBoda({ newWedding, setNewWedding }) {
             setNewWedding(prev => ({ ...prev, [name]: value }));
         }
     };
+
+    const saveNewWedding = async (e) => {
+        e.preventDefault()
+
+        const userId = localStorage.getItem('id');
+
+        const res = await doPost(`weddings/new-wedding`, {
+            ownerId: userId,
+            ...newWedding
+        })
+
+        if (res.status) {
+            navigate('/dashboard')
+        } else {
+            alert(res.message)
+        }
+
+
+    }
 
     const [fontTitle, fontBody] = newWedding.design.tipography || [];
     const [color1, color2] = newWedding.design.colors || [];
@@ -36,6 +59,6 @@ export function NuevaBoda({ newWedding, setNewWedding }) {
         <CountdownNB newWedding={newWedding} setNewWedding={setNewWedding}  />
         <UbicacionNB newWedding={newWedding} setNewWedding={setNewWedding} handleChanges={handleChanges}  />
         <FormNB  />
-        <PanelDisenoNB newWedding={newWedding} setNewWedding={setNewWedding}  />
+        <PanelDisenoNB newWedding={newWedding} setNewWedding={setNewWedding} saveNewWedding={saveNewWedding} />
     </div>
 }

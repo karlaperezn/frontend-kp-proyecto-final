@@ -12,7 +12,7 @@ export function Registrarse({valuesNewUser, setValuesNewUser}) {
    const signUpUser = async (e) => {
     e.preventDefault()
 
-    //Falta que el front haga cheack de la existencia de otro usuario
+    //Falta que el front haga check de la existencia de otro usuario
 
     const res = await doPost(`users/register-user`, {
       fullName: valuesNewUser.nameRegister,

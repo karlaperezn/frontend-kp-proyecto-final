@@ -1,5 +1,5 @@
 
-export function PanelDisenoNB({ newWedding, setNewWedding }) {
+export function PanelDisenoNB({ newWedding, setNewWedding, saveNewWedding }) {
 
     const optionFonts = [
         {
@@ -80,6 +80,8 @@ export function PanelDisenoNB({ newWedding, setNewWedding }) {
             })}
 
         </div>
+
+        <button className="button button-panel" onClick={saveNewWedding}>Guardar invitación</button>
 
 
     </div>
