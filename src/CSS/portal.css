@@ -1,0 +1,6 @@
+.portal-section {
+    height: 80vh;
+    justify-content: center;
+    max-width: 450px;
+    gap: 1rem
+}

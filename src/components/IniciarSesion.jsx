@@ -1,23 +1,32 @@
+import "../CSS/portal.css"
 import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
 import { doPost } from "../services/api.services";
 import { getHtml } from "../services/html.services";
 
 export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPasswordLogin }) {
     const navigate = useNavigate();
-    
-    async function login() {
+    const [errorMessage, setErrorMessage] = useState('')
 
-        const res = await doPost(`users/login`, {
-            email: emailLogin,
-            password: passwordLogin
-        });
+    async function login(e) {
+        e.preventDefault()
+
+        try {
+            const res = await doPost(`users/login`, {
+                email: emailLogin,
+                password: passwordLogin
+            });
 
 
-        if (res.status) {
-            saveUser(res.user)
-            navigate('/dashboard')
-        } else {
-            getHtml("error-message-login").innerText = res.message;
+            if (res.status) {
+                saveUser(res.user)
+                navigate('/dashboard')
+            } else {
+                setErrorMessage(res.message);
+            }
+
+        } catch (error) {
+            setErrorMessage("Ocurrió un error al iniciar sesión")
         }
     }
 
@@ -26,24 +35,25 @@ export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPas
         localStorage.setItem("id", user._id);
         localStorage.setItem("email", user.email);
         localStorage.setItem("fullName", user.fullName);
-        
+
     }
 
-    return <div>
-        <header>
+    return <>
+        <header className="header">
             <div>
                 <Link className="logo-link" to='/'>
-                    <h3 className="h3-sansserif">Logo</h3>
+                    <h3>Logo</h3>
                 </Link>
             </div>
-            <div className="navBar">
-            </div>
         </header>
-        <div id="register-screen">
-            <h2 className="h2-sansserif">¡Bienvenido/a!</h2>
-            <span>Ingresa tus datos para iniciar sesión en tu cuenta</span>
 
-            <div className="basic-form">
+        <div className="section portal-section">
+            <div>
+                <h2 className="h2-sans">¡Bienvenido/a!</h2>
+                <span>Ingresa tus datos para iniciar sesión en tu cuenta</span>
+            </div>
+
+            <div className="form">
                 <div className="field-form">
                     <label className="small-text">Correo electrónico</label>
                     <input type="email" value={emailLogin} onChange={(e) => { setEmailLogin(e.target.value) }} required />
@@ -56,9 +66,9 @@ export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPas
                 <div>
                     <Link className="internal-link" to='/registrarse'>Aún no tengo cuenta</Link>
                 </div>
-                <p id="error-message-login" className="small-text"></p>
+                <p className="small-text feedback-error">{errorMessage}</p>
 
             </div>
         </div>
-    </div>
+    </>
 }

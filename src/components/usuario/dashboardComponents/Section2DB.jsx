@@ -1,32 +1,67 @@
 
 export function Section2DB({ guestsResponses }) {
 
-    return <div id="section2_dashboard" className="section">
-        <div id="table-guestslist">
+    {/* <td>{g.dietaryRestrictions}</td> */ }
+    const dietary = guestsResponses.filter(g => g.dietaryRestrictions).length.toString().padStart(2, '0');
+
+    return <section id="section2-dashboard" className="section-row section-dasboard">
+        <div id="guests-table">
             <table>
                 <thead>
                     <tr>
-                        <th>NO.</th>
-                        <th>NOMBRE</th>
-                        <th>CORREO ELECTRÓNICO</th>
-                        <th>ASISTENCIA</th>
-                        <th>RESTRICCIÓN ALIMENTARIA</th>
-                        <th>MENSAJE</th>
+                        <th id="guest-index">NO.</th>
+                        <th className="title-table">NOMBRE</th>
+                        <th className="title-table"> CORREO ELECTRÓNICO</th>
+                        <th id="attending">ASISTENCIA</th>
+                        <th className="title-table">MENSAJE</th>
                     </tr>
                 </thead>
                 {guestsResponses.map((g, i) => {
-                return <tbody>
-                    <tr>
-                        <td><strong>{(i + 1).toString().padStart(2, '0')}</strong></td>
-                        <td>{g.fullName}</td>
-                        <td>{g.email}</td>
-                        <td>{g.attending ? <i class="fa-solid fa-circle-check" /> : <i class="fa-regular fa-circle-xmark" />}</td>
-                        <td>{g.dietaryRestrictions}</td>
-                        <td>{g.guestMessage}</td>
-                    </tr>
-                </tbody>
+                    return <tbody>
+                        <tr>
+                            <td ><strong>{(i + 1).toString().padStart(2, '0')}</strong></td>
+                            <td className="small-text">{g.fullName}</td>
+                            <td className="small-text">{g.email}</td>
+                            <td className="small-text">{g.attending ? <i class="fa-solid fa-circle-check" /> : <i class="fa-regular fa-circle-xmark" />}</td>
+                            <td className="small-text">{g.guestMessage}</td>
+                        </tr>
+                    </tbody>
                 })}
             </table>
         </div>
-    </div>
+
+        <div id="guests-cards">
+            {guestsResponses.map((g, i) => {
+                return <div className="guest-card">
+                    <div className="guest-card-col1">
+                        <div className="h3-sans card-guest-index"> <strong>{(i + 1).toString().padStart(2, '0')}</strong></div>
+
+                        <div>
+                            <p>{g.fullName}</p>
+                            <p className="xsmall-text">{g.email}</p>
+                        </div>
+
+                    </div>
+
+                    <div className="guest-card-col2">
+                        <p className="h3-sans message-icon">{g.guestMessage ? <i class="fa-regular fa-envelope"></i> : ""}</p>
+                        <div className={g.attending ? "si-asiste" : "no-asiste"}>
+                            <p className="small-text">{g.attending ? "Sí asiste" : "No asiste"}</p>
+                        </div>
+                    </div>
+                </div>
+            })}
+        </div>
+
+
+        <div id="guest-dietary-list">
+            <h4 className="h4-sans">Invitados con restricciones alimentarias ({dietary})</h4>
+            <ul>
+                {guestsResponses.filter(g => g.dietaryRestrictions).map(g => {
+                    return <li>{g.fullName} - {g.dietaryRestrictions}</li>
+                })}
+
+            </ul>
+        </div>
+    </section>
 }

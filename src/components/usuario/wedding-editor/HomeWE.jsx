@@ -1,5 +1,5 @@
 
-export function HomeNB({newWedding, setNewWedding, handleChanges}){
+export function HomeWE({newWedding, setNewWedding, handleChanges}){
 
     return <>
     <div className="hero-section">

@@ -1,6 +1,6 @@
 
 
-export function FormNB() {
+export function FormWE() {
 
     return <div id="form-section" classname="section">
         <h2 className="h2-NB">Confirmación</h2>

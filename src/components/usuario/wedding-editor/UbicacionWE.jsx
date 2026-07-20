@@ -1,5 +1,5 @@
 
-export function UbicacionNB({ newWedding, setNewWedding, handleChanges }) {
+export function UbicacionWE({ newWedding, setNewWedding, handleChanges }) {
 
     const textDate = new Date(newWedding.eventDate).toLocaleDateString('es-Es', { weekday: 'long', day: 'numeric', month: 'long'
     }).replace(',', '');

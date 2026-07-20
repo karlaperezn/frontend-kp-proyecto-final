@@ -2,95 +2,157 @@
 
 :root {
     --script-font: 'Luxurious Script', script;
-    --sansserif-font: "Space Grotesk", sans-serif;
+    --sans-font: "Space Grotesk", sans-serif;
+    
+    /* TIPOGRAFIA SCRIPT */
+    --font-script-h1: clamp(6rem, 8vw + 2rem, 10rem);
+    --font-script-h2: clamp(3.75rem, 5vw + 1.5rem, 4.5rem);
 
-    --primary-color: #838969;
-    --secondary-color: #414C3A;
-    --bckg-color: #fffdfa;
+    /* TIPOGRAFIA SANS SERIF */
+    --font-sans-h1: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+    --font-sans-h2: clamp(1.5rem, 2.5vw + 0.8rem, 2rem);
+    --font-sans-h3: clamp(1.25rem, 1.5vw + 0.8rem, 1.5rem);
+    --font-sans-h4: clamp(1.125rem, 1vw + 0.8rem, 1.25rem);
 
-    /* wedding rsvp web */
-    --title-font-wedding: 'Luxurious Script', script;
-    --paragraph-font-wedding: "Space Grotesk", sans-serif;
+    --font-sans-body: clamp(0.938rem, 0.5vw + 0.8rem, 1rem);
+    --font-sans-small: clamp(0.813rem, 0.3vw + 0.7rem, 0.875rem);
+    --font-sans-xsmall: clamp(0.75rem, 0.2vw + 0.65rem, 0.75rem);
 
-    --primary-color-wedding: #838969;
-    --secondary-color-wedding:#414C3A;
-    --bckg-color-wedding: #fffdfa;;
+    --olive-color: #838969;
+    --dark-olive-color: #414C3A;
+    --almond-color: #f4efe7;
+    --lighter-color: #f5f1eb;
 }
+
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     width: 100%;
 
-    font-family: var(--sansserif-font);
-    color: var(--secondary-color);
-    background-color: var(--bckg-color);
-    font-weight: lighter;
+    font-family: var(--sans-font);
+    color: var(--dark-olive-color);
+    background-color: var(--ligther-color);
     overflow-x: hidden;
 }
 
-strong, .strong {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button, a {
+    font-size: var(--font-sans-body);
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    width: fit-content;
+}
+
+input,
+textarea,
+select {
+    background-color: white;
+    font-family: var(--sans-font);
+    font-size: var(--font-sans-body);
+    font-weight: 400;
+    color: var(--olive-color);
+    outline: none;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--almond-color);
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-color: var(--almond-color);
+    background-color: white;
+    outline: none;
+    accent-color: var(--dark-olive-color);
+}
+
+
+label {
+    font-size: var(--font-sans-small);
+    font-weight: 400;
+}
+
+
+/* TIPOGRAFIA */
+
+strong {
     font-weight: 500;
 }
 
-h1, h2, h3, h4, h5 {
-   margin: 0.25rem 0;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0.25rem 0;
 }
 
-/* TYPESCALE */
-/* script */
-.h1-script, .h2-script{
+/* SCRIPT */
+.h1-script,
+.h2-script {
     font-family: var(--script-font);
     font-weight: lighter;
     line-height: 80%;
-    margin:0.5rem;
+    margin: 0.5rem;
 }
 
-.h1-script { font-size: 128px; }
-
-.h2-script { font-size: 72px; }
-
-/* sans serif */
-.h1-sansserif, .h2-sansserif, .h3-sansserif, .h4-sansserif, .paragraph, .small-text, .xsmall-text {
-    font-family: var(--sansserif-font);
+.h1-script {
+    font-size: var(--font-script-h1);
 }
 
-.h1-sansserif { font-weight: 600; font-size: 40px; line-height: 110%;}
-
-.h2-sansserif { font-weight: 500; font-size: 32px; line-height: 110%;}
-
-.h3-sansserif { font-weight: 200; font-size: 24px; line-height: 110%;}
-
-.h4-sansserif { font-weight: 200; font-size: 20px; line-height: 110%;}
-
-.paragraph { font-size: 16px; font-weight: 200;}
-
-.small-text { font-size: 14px; font-weight: 400;}
-
-.xsmall-text { font-size: 12px; font-weight: 400;}
-
-/* wedding rsvp web */
-
-.h1-wedding, .h2-wedding{
-    font-family: var(--title-font-wedding);
-    color: var(--secondary-color);
-    font-weight: lighter;
-    line-height: 80%;
+.h2-script {
+    font-size: var(--font-script-h2);
 }
 
-.h1-wedding { font-size: 128px; }
-
-.h2-wedding { font-size: 72px; }
-
-.h3-wedding, .h4-wedding, .paragraph-wedding, .small-text-wedding, .xsmall-text-wedding {
-    font-family: var(--paragraph-font-wedding) ;
-    color: var(--secondary-color-wedding);
+/* SANS SERIF */
+.h1-sans, .h2-sans, .h3-sans, .h4-sans, .paragraph, .small-text, .xsmall-text {
+    font-family: var(--sans-font);
 }
 
-.h3-wedding { font-weight: lighter; font-size: 24px; }
+.h1-sans, .h2-sans {
+    font-weight: 600;
+    line-height: 100%;
+}
 
-.h4-wedding { font-weight: lighter; font-size: 20px; }
+.h3-sans, .h4-sans, .paragraph, .small-text, .xsmall-text {
+    font-family: var(--sans-font);
+    font-weight: 300;
+}
 
-.paragraph-wedding { font-weight: lighter; font-size: 16px;}
+.h1-sans {
+    font-size: var(--font-sans-h1);
+}
 
-.small-text-wedding { font-weight: lighter; font-size: 14px; }
+.h2-sans {
+    font-size: var(--font-sans-h2);
+}
+
+.h3-sans {
+    font-size: var(--font-sans-h3);
+}
+
+.h4-sans {
+    font-size: var(--font-sans-h4);
+}
+
+p, .paragraph {
+    font-size: var(--font-sans-body);
+}
+
+.small-text {
+    font-size: var(--font-sans-small);
+}
+
+.xsmall-text {
+    font-size: var(--font-sans-xsmall);
+}

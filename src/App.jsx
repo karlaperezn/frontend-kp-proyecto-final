@@ -8,7 +8,8 @@ import { Template } from './components/Template';
 import { Registrarse } from './components/Registrarse';
 import { IniciarSesion } from './components/IniciarSesion';
 import { Dashboard } from './components/usuario/Dashboard';
-import { NuevaBoda } from './components/usuario/NuevaBoda'
+import { WeddingEditor } from './components/usuario/WeddingEditor'
+import { InvitacionBoda } from './components/InvitacionBoda';
 
 function App() {
   //Sign up
@@ -66,6 +67,9 @@ function App() {
     }
   })
 
+  //invitacion
+  let [invitacion, setInvitacion] = useState()
+
 
   return (
     <BrowserRouter>
@@ -74,10 +78,10 @@ function App() {
         <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
         <Route path='/iniciar-sesion' element={<IniciarSesion emailLogin={emailLogin} setEmailLogin={setEmailLogin} passwordLogin={passwordLogin} setPasswordLogin={setPasswordlLogin} />} />
         <Route path='/dashboard' element={<Dashboard weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />} />
-        {/* <Route path='/dashboard/:weddingId' element={}/> */}
-        <Route path='/nueva-boda' element={<NuevaBoda newWedding={newWedding} setNewWedding={setNewWedding} />} />
+        <Route path='/nueva-boda' element={<WeddingEditor newWedding={newWedding} setNewWedding={setNewWedding} />} />
 
         <Route path='/template' element={<Template />} />
+        <Route path='/invitacion-boda/:novios' element={<InvitacionBoda />} />
 
       </Routes>
     </BrowserRouter>

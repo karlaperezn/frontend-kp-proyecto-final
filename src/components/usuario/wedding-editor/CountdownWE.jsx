@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export function CountdownNB({ newWedding, setNewWedding }) {
+export function CountdownWE({ newWedding, setNewWedding }) {
     const [timeLeft, setTimeLeft] = useState({
         days: 0, hours: 0, mins: 0, secs: 0
     });

@@ -6,22 +6,22 @@ import { Section2DB } from "./dashboardComponents/Section2DB";
 export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses }) {
     const fullName = localStorage.getItem('fullName')
 
-    return <div>
-        <header>
-            <div>
-                <Link className="logo-link" to='/'>
-                    <h3 className="h3-sansserif">Logo</h3>
-                </Link>
-            </div>
+    return <>
+        <header id="header-dashboard" className="header">
+            <div><h3>Logo</h3></div>
+
             <div className="navBar">
                 <p><strong>Panel RSVP</strong></p>
-                <p>Ver invitación</p>
+                <Link to={`/invitacion-boda/${selectedWedding.slug}`}>Ver invitación</Link>
                 <p>|</p>
-                {/* Pendiente de volverlo link */} <p><strong>{fullName}</strong></p>
+                <Link className="strong">{fullName}</Link>
                 <div className="avatarProfile"><i className="fa-solid fa-user" /></div>
             </div>
+
         </header>
+
+
         <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />
         <Section2DB guestsResponses={guestsResponses} />
-    </div>
+    </>
 }
