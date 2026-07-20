@@ -1,5 +1,5 @@
 
-export function PanelDisenoWE({ abierto, onClose, newWedding, setNewWedding, saveNewWedding }) {
+export function PanelDisenoWE({ abierto, onClose, weddingData, setWeddingData, saveWedding }) {
 
     const optionFonts = [
         {
@@ -34,7 +34,6 @@ export function PanelDisenoWE({ abierto, onClose, newWedding, setNewWedding, sav
 
 
     return <>
-        {/* fondo oscuro semi-transparente, para cerrar al hacer clic afuera */}
         {abierto && (
             <div className="overlay" onClick={onClose} />
         )}
@@ -46,14 +45,14 @@ export function PanelDisenoWE({ abierto, onClose, newWedding, setNewWedding, sav
             <div id="tipography-selection">
                 <h4 className="small-text">TIPOGRAFÍA</h4>
                 {optionFonts.map((fonts) => {
-                    const selectedFont = JSON.stringify(newWedding.design.tipography) === JSON.stringify(fonts.tipography);
+                    const selectedFont = JSON.stringify(weddingData.design.tipography) === JSON.stringify(fonts.tipography);
 
                     return (
                         <div
                             key={fonts.title}
                             className={`option-container font-option ${selectedFont ? 'seleccionado' : ''}`}
                             onClick={() => {
-                                setNewWedding(prev => ({
+                                setWeddingData(prev => ({
                                     ...prev,
                                     design: { ...prev.design, tipography: fonts.tipography }
                                 }));
@@ -71,12 +70,12 @@ export function PanelDisenoWE({ abierto, onClose, newWedding, setNewWedding, sav
             <div id="colorPalette-selection">
                 <h4 className="small-text">PALETA DE COLOR</h4>
                 {optionColors.map(palette => {
-                    const selectedColor = JSON.stringify(newWedding.design.colors) === JSON.stringify(palette.colors);
+                    const selectedColor = JSON.stringify(weddingData.design.colors) === JSON.stringify(palette.colors);
 
                     return <div
                         className={`option-container colors-option ${selectedColor ? 'seleccionado' : ''}`}
                         onClick={() => {
-                            setNewWedding(prev => ({
+                            setWeddingData(prev => ({
                                 ...prev,
                                 design: { ...prev.design, colors: palette.colors }
                             }));
@@ -90,7 +89,7 @@ export function PanelDisenoWE({ abierto, onClose, newWedding, setNewWedding, sav
 
             </div>
 
-            <button className="button button-panel" onClick={saveNewWedding}>Guardar invitación</button>
+            <button className="button button-panel" onClick={saveWedding}>Guardar web RSVP</button>
 
 
         </div>

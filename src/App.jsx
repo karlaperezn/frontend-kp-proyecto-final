@@ -26,6 +26,7 @@ function App() {
   const [weddings, setWeddings] = useState([])
   const [selectedWedding, setSelectedWedding] = useState([])
   const [guestsResponses, setGuestsResponses] = useState([])
+  console.log(selectedWedding)
 
 
   useEffect(() => {
@@ -46,29 +47,26 @@ function App() {
     fetchGuestsResponses()
   }, [selectedWedding])
 
-  //Crear boda
-  let [newWedding, setNewWedding] = useState({
-    brideName: 'María',
-    groomName: 'Pedro',
-    eventDate: '2027-07-14',
+  //Crear o editar boda
+  let [weddingData, setWeddingData] = useState({
+    brideName: '',
+    groomName: '',
+    eventDate: '',
     ceremony: {
-      place: 'Basílica de San Miguel',
-      address: 'Calle de San Justo, 4, Centro, 28005 Madrid',
-      hour: '17:30',
+      place: '',
+      address: '',
+      hour: '',
     },
     reception: {
-      place: 'Palacio del Negralejo',
-      address: 'Carretera de Mejorada, Km. 3, 28522 Rivas-Vaciamadrid, Madrid',
-      hour: '19:15',
+      place: '',
+      address: '',
+      hour: '',
     },
     design: {
       tipography: ['Luxurious Script', 'Space Grotesk'],
       colors: ['#838969', '#414C3A']
     }
   })
-
-  //invitacion
-  let [invitacion, setInvitacion] = useState()
 
 
   return (
@@ -78,10 +76,11 @@ function App() {
         <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
         <Route path='/iniciar-sesion' element={<IniciarSesion emailLogin={emailLogin} setEmailLogin={setEmailLogin} passwordLogin={passwordLogin} setPasswordLogin={setPasswordlLogin} />} />
         <Route path='/dashboard' element={<Dashboard weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />} />
-        <Route path='/nueva-boda' element={<WeddingEditor newWedding={newWedding} setNewWedding={setNewWedding} />} />
+        <Route path='/dashboard/nueva-boda' element={<WeddingEditor modo="create" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} />} />
+        <Route path='/dashboard/:weddingId/editar' element={<WeddingEditor modo="edit" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} />} />
+
 
         <Route path='/template' element={<Template />} />
-        <Route path='/invitacion-boda/:novios' element={<InvitacionBoda />} />
 
       </Routes>
     </BrowserRouter>

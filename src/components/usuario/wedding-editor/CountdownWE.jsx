@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export function CountdownWE({ newWedding, setNewWedding }) {
+export function CountdownWE({ weddingData }) {
     const [timeLeft, setTimeLeft] = useState({
         days: 0, hours: 0, mins: 0, secs: 0
     });
@@ -8,7 +8,7 @@ export function CountdownWE({ newWedding, setNewWedding }) {
     useEffect(() => {
         const interval = setInterval(() => {
             const today = new Date().getTime();
-            const weddingDate = new Date(newWedding.eventDate).getTime();
+            const weddingDate = new Date(weddingData.eventDate).getTime();
             const substract = weddingDate - today;
 
             if (substract <= 0) {
@@ -26,7 +26,7 @@ export function CountdownWE({ newWedding, setNewWedding }) {
         }, 1000)
 
         return () => clearInterval(interval)
-    }, [newWedding.eventDate])
+    }, [weddingData.eventDate])
 
 
     return <div id="countdown-section-NB" className="section">
