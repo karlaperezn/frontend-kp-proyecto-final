@@ -60,7 +60,7 @@ export function PanelDisenoWE({ abierto, onClose, weddingData, setWeddingData, s
                         >
                             <div className="fonts-container">
                                 <h4 id={fonts.titleid}>{fonts.title}</h4>
-                                <p id={fonts.paragraphid}>Nos encantaría pasar este día...</p>
+                                <p style={{fontFamily: fonts.tipography[1], fontSize: '12px', color: "#2F2F2F"}}>Nos encantaría pasar este día...</p>
                             </div>
                         </div>
                     )
@@ -89,7 +89,7 @@ export function PanelDisenoWE({ abierto, onClose, weddingData, setWeddingData, s
 
             </div>
 
-            <button className="button button-panel" onClick={saveWedding}>Guardar web RSVP</button>
+            <button className="button button-panel" onClick={saveWedding}>Guardar web</button>
 
 
         </div>

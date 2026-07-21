@@ -1,4 +1,5 @@
-import "../../CSS/weddingEditor.css"
+import "../../CSS/template.css";
+import "../../CSS/paneldiseno.css";
 import { doGet, doPost, doPut } from "../../services/api.services"
 import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -60,7 +61,7 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
     const [panelAbierto, setPanelAbierto] = useState(false);
 
 
-    return <div style={{
+    return <div id="wedding-web-body" style={{
         '--font-title-wedding': `'${fontTitle}', serif`,
         '--font-body-wedding': `'${fontBody}', sans-serif`,
         '--color-1-wedding': color1,

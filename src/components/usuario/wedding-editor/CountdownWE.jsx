@@ -18,9 +18,9 @@ export function CountdownWE({ weddingData }) {
             }
 
             setTimeLeft({
-                days: Math.floor(substract / (1000 * 60 * 60 * 24)), 
-                hours: Math.floor((substract % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), 
-                mins: Math.floor((substract % (1000 * 60 * 60)) / (1000 * 60)), 
+                days: Math.floor(substract / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((substract % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                mins: Math.floor((substract % (1000 * 60 * 60)) / (1000 * 60)),
                 secs: Math.floor((substract % (1000 * 60)) / 1000)
             })
         }, 1000)
@@ -29,24 +29,25 @@ export function CountdownWE({ weddingData }) {
     }, [weddingData.eventDate])
 
 
-    return <div id="countdown-section-NB" className="section">
-        <h2 className="h2-NB">Conteo regresivo</h2>
-        <div id="countdown-row">
-            <div className="countdown-box-NB">
-                <span className="h3-NB">{timeLeft.days}</span>
-                <span className="paragraph-NB">días</span>
+    return <div className="section countdown-section">
+        <h2>Conteo regresivo</h2>
+
+        <div className="countdown-bow-container">
+            <div className="countdown-box">
+                <span>{timeLeft.days ? timeLeft.days : "365"}</span>
+                <p>días</p>
             </div>
-            <div className="countdown-box-NB">
-                <span className="h3-NB">{timeLeft.hours}</span>
-                <span className="paragraph-NB">horas</span>
+            <div className="countdown-box">
+                <span>{timeLeft.hours ? timeLeft.hours : "12"}</span>
+                <p>horas</p>
             </div>
-            <div className="countdown-box-NB">
-                <span className="h3-NB">{timeLeft.mins}</span>
-                <span className="paragraph-NB">minutos</span>
+            <div className="countdown-box">
+                <span>{timeLeft.mins ? timeLeft.mins : "46"}</span>
+                <p>minutos</p>
             </div>
-            <div className="countdown-box-NB">
-                <span className="h3-NB">{timeLeft.secs}</span>
-                <span className="paragraph-NB">segundos</span>
+            <div className="countdown-box">
+                <span>{timeLeft.secs ? timeLeft.secs : "09"}</span>
+                <p>segundos</p>
             </div>
         </div>
     </div>

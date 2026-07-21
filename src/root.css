@@ -20,7 +20,7 @@
 
     --olive-color: #838969;
     --dark-olive-color: #414C3A;
-    --almond-color: #f4efe7;
+    --almond-color: #ede7dd;
     --lighter-color: #f5f1eb;
 }
 
@@ -32,7 +32,7 @@ body {
 
     font-family: var(--sans-font);
     color: var(--dark-olive-color);
-    background-color: var(--ligther-color);
+    background-color: var(--lighter-color);
     overflow-x: hidden;
 }
 
