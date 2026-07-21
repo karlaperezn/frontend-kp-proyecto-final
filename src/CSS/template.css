@@ -180,9 +180,14 @@ input[type="date"] {
 }
 
 .rsvp-input, .rsvp-textarea {
+    color: var(--color-1-wedding);
     border: 1px solid var(--almond-color);
     background-color: white !important;
 
+}
+
+.rsvp-form input[type="checkbox"]{
+    accent-color: var(--color-1-wedding);
 }
 
 .container-options-attending {

@@ -1,5 +1,5 @@
 
-export function PanelDisenoWE({ abierto, onClose, weddingData, setWeddingData, saveWedding }) {
+export function PanelDisenoWE({ modo, abierto, onClose, weddingData, setWeddingData, saveWedding }) {
 
     const optionFonts = [
         {
@@ -89,7 +89,7 @@ export function PanelDisenoWE({ abierto, onClose, weddingData, setWeddingData, s
 
             </div>
 
-            <button className="button button-panel" onClick={saveWedding}>Guardar web</button>
+            <button className="button button-panel" onClick={saveWedding}>{modo === "create" ? "Guardar boda" : "Guardar cambios"}</button>
 
 
         </div>

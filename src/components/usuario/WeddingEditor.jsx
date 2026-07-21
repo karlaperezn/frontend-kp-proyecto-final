@@ -12,7 +12,8 @@ import { PanelDisenoWE } from "./wedding-editor/PanelDisenoWE"
 
 export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWedding }) {
     const { weddingId } = useParams();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const userId = localStorage.getItem('id');
 
     const handleChanges = (e) => {
         const { name, value } = e.target;
@@ -39,15 +40,21 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
 
     async function saveWedding() {
         if (modo === "create") {
-            const userId = localStorage.getItem('id');
             const res = await doPost(`weddings/new-wedding`, {
                 ownerId: userId,
                 ...weddingData
             })
             if (res.status) navigate('/dashboard')
         } else {
-            const res = await doPut(`/editar-boda/${weddingId}`, weddingData);
-            if (res.status) navigate('/dashboard') 
+            const res = await doPut(`weddings/editar-boda/${weddingId}`, {
+                userId,
+                ...weddingData
+            });
+            if (res.status) {
+                navigate('/dashboard')
+            } else {
+                alert(res.message)
+            }
         }
     }
 
@@ -80,6 +87,6 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
         >
             <i class="fa-solid fa-palette"></i>  Diseño
         </button>
-        <PanelDisenoWE abierto={panelAbierto} onClose={() => setPanelAbierto(false)} weddingData={weddingData} setWeddingData={setWeddingData} saveWedding={saveWedding} />
+        <PanelDisenoWE abierto={panelAbierto} onClose={() => setPanelAbierto(false)} modo={modo} weddingData={weddingData} setWeddingData={setWeddingData} saveWedding={saveWedding} />
     </div>
 }
