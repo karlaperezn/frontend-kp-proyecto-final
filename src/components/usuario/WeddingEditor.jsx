@@ -1,5 +1,6 @@
 import "../../CSS/template.css";
 import "../../CSS/paneldiseno.css";
+import "../../CSS/editor.css"
 import { doGet, doPost, doPut } from "../../services/api.services"
 import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -10,7 +11,7 @@ import { FormWE } from "./wedding-editor/FormWE"
 import { PanelDisenoWE } from "./wedding-editor/PanelDisenoWE"
 
 
-export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWedding }) {
+export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWedding, setSelectedWedding }) {
     const { weddingId } = useParams();
     const navigate = useNavigate();
     const userId = localStorage.getItem('id');
@@ -51,7 +52,9 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
                 ...weddingData
             });
             if (res.status) {
+                setSelectedWedding([])
                 navigate('/dashboard')
+
             } else {
                 alert(res.message)
             }
@@ -68,7 +71,7 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
     const [panelAbierto, setPanelAbierto] = useState(false);
 
 
-    return <div id="wedding-web-body" style={{
+    return <div id="wedding-web-editor" style={{
         '--font-title-wedding': `'${fontTitle}', serif`,
         '--font-body-wedding': `'${fontBody}', sans-serif`,
         '--color-1-wedding': color1,

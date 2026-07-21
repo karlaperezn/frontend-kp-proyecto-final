@@ -1,7 +1,6 @@
 
 export function Section2DB({ guestsResponses }) {
 
-    {/* <td>{g.dietaryRestrictions}</td> */ }
     const dietary = guestsResponses.filter(g => g.dietaryRestrictions).length.toString().padStart(2, '0');
 
     return <section id="section2-dashboard" className="section-row section-dasboard">

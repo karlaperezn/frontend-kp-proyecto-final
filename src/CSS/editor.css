@@ -1,0 +1,164 @@
+#wedding-web-editor {
+    font-family: var(--font-body-wedding);
+    color: var(--color-2-wedding);
+    overflow-x: hidden;
+}
+
+#wedding-web-editor p {
+    font-family: var(--font-body-wedding);
+}
+
+#wedding-web-editor h2 {
+    font-family: var(--font-title-wedding);
+    font-size: var(--h2-fontSize);
+    font-weight: lighter;
+}
+
+#editor-hero-section input, .location-section input, .location-section textarea {
+    background-color: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.157);
+    outline: none;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    resize: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#wedding-web-editor input:focus, #wedding-web-editor textarea:focus {
+    border: 1px solid var(--color-1-wedding);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+input[type="date"] {
+    background-image: none !important;
+    text-align: center;
+}
+
+/* HERO RSVP */
+#editor-hero-section {
+    justify-content: center;
+}
+
+#editor-hero-section, #editor-hero-section input, #editor-hero-section h4 {
+    color: var(--lighter-color);
+    font-weight: 200;
+    font-size: clamp(1.25rem, 1.5vw + 0.8rem, 1.5rem);
+}
+
+#editor-hero-section input::placeholder {
+    color: rgba(255, 255, 255, 0.349);
+}
+
+#couple-names, #couple-names input {
+    font-family: var(--font-title-wedding);
+    font-size: var(--h1-fontSize);
+}
+
+#couple-names {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    line-height: 0.5;
+    gap: 0.75rem;
+}
+
+#editor-input-brideName {
+    text-align: right;
+}
+
+/* COUNTDOWN */
+.editor-countdown-box{
+    background-color: var(--color-1-wedding);
+}
+
+/* UBICACION */
+#editor-location-section {
+    background-color: var(--color-2-wedding);
+}
+
+.editor-divider-line {
+    border-left: 1px solid var(--color-1-wedding);
+}
+
+.editor-info-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.editor-info-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.location-section input, .location-section textarea {
+    color: var(--lighter-color);
+    font-weight: 300;
+}
+
+.location-section textarea {
+    text-align: center;
+}
+
+.location-section input::placeholder, .location-section textarea::placeholder {
+    color: rgba(255, 255, 255, 0.349);
+}
+
+.editor-input-hour {
+    width: 65px !important;
+}
+
+/* FORMULARIO */
+#wedding-web-editor .rsvp-input, #wedding-web-editor .rsvp-textarea {
+    color: var(--color-1-wedding);
+}
+
+#wedding-web-editor .rsvp-form input[type="checkbox"]{
+    accent-color: var(--color-1-wedding);
+}
+
+#wedding-web-editor .option-attending:hover label,
+#wedding-web-editor .option-attending input[type="radio"]:checked+label {
+    border: 1px solid var(--color-1-wedding);
+    background-color: var(--color-1-wedding);
+}
+
+#wedding-web-editor .rsvp-button {
+    font-family: var(--font-body-wedding);
+    background-color: var(--color-1-wedding);
+    border: 1px solid var(--color-1-wedding);
+}
+
+#wedding-web-editor .rsvp-button:hover {
+    border: 1px solid var(--color-2-wedding);
+    background-color: var(--color-2-wedding);
+}
+
+
+
+@media (max-width: 767px) {
+    #couple-names{
+        flex-wrap: wrap;
+        
+    }
+
+    #couple-names input{
+        text-align: center;
+        height: 120px;
+    }
+
+    .editor-divider-line {
+        border-left: none;
+        border-top: 1px solid var(--color-1-wedding);
+    }
+}

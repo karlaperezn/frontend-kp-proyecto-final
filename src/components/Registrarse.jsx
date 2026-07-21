@@ -2,7 +2,6 @@ import "../CSS/portal.css"
 import { Link } from "react-router-dom"
 import { useState } from "react";
 import { doPost } from "../services/api.services.js";
-import { getHtml } from "../services/html.services.js";
 
 export function Registrarse({ valuesNewUser, setValuesNewUser }) {
 

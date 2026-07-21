@@ -2,7 +2,6 @@ import "../CSS/portal.css"
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react";
 import { doPost } from "../services/api.services";
-import { getHtml } from "../services/html.services";
 
 export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPasswordLogin }) {
     const navigate = useNavigate();

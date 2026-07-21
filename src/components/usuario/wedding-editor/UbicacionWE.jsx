@@ -5,7 +5,7 @@ export function UbicacionWE({ weddingData, handleChanges }) {
     }).replace(',', '');
     const formattedDate = textDate.charAt(0).toUpperCase() + textDate.slice(1);
 
-    return <div className="section-row location-section">
+    return <div id="editor-location-section" className="section-row location-section">
 
         <div className="location-column">
             <h2>Ceremonia</h2>
@@ -22,7 +22,7 @@ export function UbicacionWE({ weddingData, handleChanges }) {
             </div>
 
         </div>
-        <div className="location-column divider-line">
+        <div className="location-column editor-divider-line">
             <h2>Recepción</h2>
 
             <div className="editor-info-location">

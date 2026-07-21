@@ -1,78 +1,7 @@
-#wedding-web-body {
-    font-family: var(--font-body-wedding);
-    color: var(--color-2-wedding);
-    overflow-x: hidden;
-}
-
-#wedding-web-body p {
-    font-family: var(--font-body-wedding);
-}
-
-#wedding-web-body h2 {
-    font-family: var(--font-title-wedding);
-    font-size: var(--h2-fontSize);
-    font-weight: lighter;
-}
-
-#editor-hero-section input, .location-section input, .location-section textarea {
-    background-color: transparent;
-    border: 1px dashed rgba(255, 255, 255, 0.157);
-    outline: none;
-    height: auto;
-    width: auto;
-    max-width: 500px;
-    resize: none;
-    padding: 0.5rem;
-    cursor: pointer;
-}
-
 textarea {resize: none;}
 
-#wedding-web-body input:focus, #wedding-web-body textarea:focus {
-    border: 1px solid var(--color-1-wedding);
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none !important;
-    -webkit-appearance: none !important;
-}
-
-input[type="date"] {
-    background-image: none !important;
-    text-align: center;
-}
-
 /* HERO RSVP */
-#editor-hero-section {
-    justify-content: center;
-}
 
-#editor-hero-section, #editor-hero-section input, #editor-hero-section h4 {
-    color: var(--lighter-color);
-    font-weight: 200;
-    font-size: clamp(1.25rem, 1.5vw + 0.8rem, 1.5rem);
-}
-
-#editor-hero-section input::placeholder {
-    color: rgba(255, 255, 255, 0.349);
-}
-
-#couple-names, #couple-names input {
-    font-family: var(--font-title-wedding);
-    font-size: var(--h1-fontSize);
-}
-
-#couple-names {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-    line-height: 0.5;
-}
-
-#editor-input-brideName {
-    text-align: right;
-}
 
 /* COUNTDOWN */
 .countdown-section {
@@ -99,7 +28,6 @@ input[type="date"] {
     border-radius: 4px;
     width: 150px;
     height: 110px;
-    background-color: var(--color-1-wedding);
 }
 
 .countdown-box span {
@@ -114,48 +42,17 @@ input[type="date"] {
     padding: 4rem 0;
     color: var(--lighter-color);
     border-radius: 4px;
-    background-color: var(--color-2-wedding);
     gap: 20px;
 }
 
 .divider-line {
-    border-left: 1px solid var(--color-1-wedding);
-}
-
-.editor-info-location {
-    display: flex;
-    flex-direction: column;
-    gap: 4px
-}
-
-.editor-info-date {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem 0;
-}
-
-.location-section input, .location-section textarea {
-    color: var(--lighter-color);
-    font-weight: 300;
-}
-
-.location-section textarea {
-    text-align: center;
+    border-left: 1px solid var();
 }
 
 .place-name {
     font-size: 20px;
 }
 
-.location-section input::placeholder, .location-section textarea::placeholder {
-    color: rgba(255, 255, 255, 0.349);
-}
-
-.editor-input-hour {
-    width: 65px !important;
-}
 
 /* FORMULARIO */
 
@@ -180,14 +77,14 @@ input[type="date"] {
 }
 
 .rsvp-input, .rsvp-textarea {
-    color: var(--color-1-wedding);
+    color: var();
     border: 1px solid var(--almond-color);
-    background-color: white !important;
+    background-color: white;
 
 }
 
 .rsvp-form input[type="checkbox"]{
-    accent-color: var(--color-1-wedding);
+    accent-color: var();
 }
 
 .container-options-attending {
@@ -207,8 +104,8 @@ input[type="date"] {
 .option-attending:hover label,
 .option-attending input[type="radio"]:checked+label {
     color: var(--lighter-color);
-    border: 1px solid var(--color-1-wedding);
-    background-color: var(--color-1-wedding);
+    border: 1px solid var();
+    background-color: var();
 }
 
 .option-attending label {
@@ -241,36 +138,25 @@ input[type="date"] {
 
 .rsvp-button {
     border-radius: 4px;
-    font-family: var(--font-body-wedding);
+    font-family: var();
     font-size: 16px;
     padding: 8px 12px;
     margin: 1rem 0;
-    background-color: var(--color-1-wedding);
+    background-color: var();
     color: var(--lighter-color);
-    border: 1px solid var(--color-1-wedding);
+    border: 1px solid var();
     text-decoration: none;
 }
 
 .rsvp-button:hover {
     outline: none;
     color: var(--lighter-color);
-    border: 1px solid transparent;
-    background-color: var(--color-2-wedding);
+    border: 1px solid var();
+    background-color: var();
 }
-
-/* PANEL DISENO */
 
 
 @media (max-width: 767px) {
-    #couple-names{
-        flex-wrap: wrap;
-        
-    }
-
-    #couple-names input{
-        text-align: center;
-        height: 120px;
-    }
 
     .location-section {
        flex-wrap: wrap;
@@ -278,7 +164,7 @@ input[type="date"] {
 
     .divider-line {
         border-left: none;
-        border-top: 1px solid var(--color-1-wedding);
+        border-top: 1px solid var();
     }
 
 }
