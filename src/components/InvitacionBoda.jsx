@@ -6,6 +6,8 @@ import { FormIB } from './invitacionBoda/FormIB'
 
 export function InvitacionBoda({ template, weddingInvite }) {
 
+    
+
     return <div id="invitacion-boda">
         <HeroIB />
         <CountdownIB />

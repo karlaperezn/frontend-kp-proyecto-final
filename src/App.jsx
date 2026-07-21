@@ -100,10 +100,10 @@ function App() {
 
         <Route path='/dashboard' element={<Dashboard weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />} />
         <Route path='/dashboard/nueva-boda' element={<WeddingEditor modo="create" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} />} />
-        <Route path='/dashboard/:weddingId/editar' element={<WeddingEditor modo="edit" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} />} />
+        <Route path='/dashboard/editar/:weddingId' element={<WeddingEditor modo="edit" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} />} />
 
         <Route path='/plantilla' element={<InvitacionBoda template={true} />} />
-        <Route path='/invitacion/:weddingSlug' element={<InvitacionBoda template={false} weddingInvite={weddingInvite}/>} />
+        <Route path='/invitacion/:weddingSlug' element={<InvitacionBoda template={false} weddingInvite={weddingInvite} />} />
 
       </Routes>
     </BrowserRouter>

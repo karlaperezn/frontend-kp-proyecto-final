@@ -32,8 +32,9 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
     useEffect(() => {
         if (modo === "edit" && weddingId) {
             async function fetchWedding() {
-                const res = await doGet(`weddings/${weddingId}`);
+                const res = await doGet(`weddings/preview/${weddingId}`);
                 setWeddingData(res.wedding)
+                console.log(weddingData)
             }
             fetchWedding()
         }

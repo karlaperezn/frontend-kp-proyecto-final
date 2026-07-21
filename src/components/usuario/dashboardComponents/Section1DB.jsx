@@ -40,7 +40,7 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
                 </div>
                 {selectedWedding && selectedWedding._id && (
                     <div className="dashboard-actions h4-sans">
-                        <Link to={`/dashboard/${selectedWedding._id}/editar`} ><i class="fa-regular fa-pen-to-square" /> Editar invitación</Link>
+                        <Link to={`/dashboard/editar/${selectedWedding._id}`} ><i class="fa-regular fa-pen-to-square" /> Editar invitación</Link>
                         <p><i class="fa-solid fa-user-plus" /> Añadir colaborador</p>
                     </div>
 
