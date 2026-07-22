@@ -38,7 +38,7 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
             }
             fetchWedding()
         }
-    }, [modo, weddingId])
+    }, [modo, weddingId, setWeddingData])
 
     async function saveWedding() {
         if (modo === "create") {

@@ -18,7 +18,7 @@ export function Home() {
                     <h4 className="h4-sans">Compartid vuestro gran día con una invitación digital elegante, práctica y fácil de crear.</h4>
 
                     <div className="container-buttons">
-                        <Link className="button button-alt">Ver plantilla</Link>
+                        <Link to='/plantilla' target="_blank" className="button button-alt">Ver plantilla</Link>
                         <Link to='/registrarse' className="button">Empezar gratis</Link>
                     </div>
                 </div>
