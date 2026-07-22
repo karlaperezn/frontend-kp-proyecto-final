@@ -1,14 +1,14 @@
 
-export function HeroIB(){
+export function HeroIB({ inviteValues}) {
 
     return <>
-        <div className="hero-section hero-background">
+        <div className="hero-section hero-background hero-wedding">
             <div className="hero-content">
 
                 <div id="hero-row1">
-                    <span>Nos casamos</span>
-                    <h1>Novia & Novio</h1>
-                    <h4>00/00/000</h4>
+                    <h4>Nos casamos</h4>
+                    <h1>{inviteValues.brideName} & {inviteValues.groomName}</h1>
+                    <h4>{inviteValues.eventDate}</h4>
                 </div>
 
                 <div id="hero-row2">

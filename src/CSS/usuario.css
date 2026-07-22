@@ -142,8 +142,7 @@
 #guest-dietary-list {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    flex: 0 1 333px;
+    width: 333px;
     min-height: 300px;
     border-radius: 8px;
     padding: 1rem;
@@ -245,6 +244,11 @@
         border: 1px solid var(--dark-olive-color);
         color: var(--dark-olive-color);
         background-color: transparent;
+    }
+
+    #guest-dietary-list {
+        width: 100%;
+        padding: 1rem 1.7rem;
     }
 
 

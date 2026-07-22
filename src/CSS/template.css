@@ -1,6 +1,9 @@
 textarea {resize: none;}
 
 /* HERO RSVP */
+.hero-wedding {
+    justify-content: center;
+}
 
 
 /* COUNTDOWN */
@@ -45,17 +48,12 @@ textarea {resize: none;}
     gap: 20px;
 }
 
-.divider-line {
-    border-left: 1px solid var();
-}
-
 .place-name {
     font-size: 20px;
 }
 
 
 /* FORMULARIO */
-
 .rsvp-form-section {
     align-items: center;
     justify-content: center;
@@ -77,14 +75,9 @@ textarea {resize: none;}
 }
 
 .rsvp-input, .rsvp-textarea {
-    color: var();
     border: 1px solid var(--almond-color);
     background-color: white;
 
-}
-
-.rsvp-form input[type="checkbox"]{
-    accent-color: var();
 }
 
 .container-options-attending {
@@ -104,8 +97,6 @@ textarea {resize: none;}
 .option-attending:hover label,
 .option-attending input[type="radio"]:checked+label {
     color: var(--lighter-color);
-    border: 1px solid var();
-    background-color: var();
 }
 
 .option-attending label {
@@ -138,21 +129,16 @@ textarea {resize: none;}
 
 .rsvp-button {
     border-radius: 4px;
-    font-family: var();
     font-size: 16px;
     padding: 8px 12px;
     margin: 1rem 0;
-    background-color: var();
     color: var(--lighter-color);
-    border: 1px solid var();
     text-decoration: none;
 }
 
 .rsvp-button:hover {
     outline: none;
     color: var(--lighter-color);
-    border: 1px solid var();
-    background-color: var();
 }
 
 
@@ -162,9 +148,5 @@ textarea {resize: none;}
        flex-wrap: wrap;
     }
 
-    .divider-line {
-        border-left: none;
-        border-top: 1px solid var();
-    }
 
 }

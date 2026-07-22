@@ -2,7 +2,7 @@
 export function HomeWE({ weddingData, handleChanges }) {
 
     return <>
-        <div id="editor-hero-section" className="hero-section hero-background">
+        <div id="editor-hero-section" className="hero-section hero-background hero-wedding">
             <div className="hero-content">
 
                 <div id="editor-hero-row1">

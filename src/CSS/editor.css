@@ -4,10 +4,6 @@
     overflow-x: hidden;
 }
 
-#wedding-web-editor p {
-    font-family: var(--font-body-wedding);
-}
-
 #wedding-web-editor h2 {
     font-family: var(--font-title-wedding);
     font-size: var(--h2-fontSize);
@@ -41,9 +37,6 @@ input[type="date"] {
 }
 
 /* HERO RSVP */
-#editor-hero-section {
-    justify-content: center;
-}
 
 #editor-hero-section, #editor-hero-section input, #editor-hero-section h4 {
     color: var(--lighter-color);

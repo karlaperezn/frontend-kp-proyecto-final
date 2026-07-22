@@ -65,7 +65,7 @@ export function FormWE() {
             </div>
             <div id="textareaGuest" className="rsvp-field-form">
                 <label htmlFor="guestMessage" >Mensaje para los novios (opcional)</label>
-                <textarea name="guestMessage" className="rsvp-textarea" id="guestMessage" />
+                <textarea className="rsvp-textarea" id="guestMessage" />
             </div>
             <button className="rsvp-button">Enviar respuesta</button>
         </div>

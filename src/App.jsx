@@ -1,7 +1,7 @@
 import './App.css';
 import './root.css';
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { doGet } from './services/api.services';
 import { Home } from './components/Home';
 import { Registrarse } from './components/Registrarse';
@@ -17,6 +17,7 @@ function App() {
     emailRegister: '',
     passwordRegister: ''
   })
+  
   //Log in
   const [emailLogin, setEmailLogin] = useState('');
   const [passwordLogin, setPasswordlLogin] = useState('');
@@ -66,28 +67,7 @@ function App() {
       colors: ['#838969', '#414C3A']
     }
   })
-
-  //Para mostrar invitacion existente
-  const [weddingInvite, setWeddingInvite] = useState([])
-  const { weddingSlug } = useParams();
-
-  useEffect(() => {
-    async function fetchInvite() {
-      try {
-        const res = await doGet(`weddings/${weddingSlug}`);
-        if(res.status) {
-          setWeddingInvite(res.wedding)
-        } else {
-          console.error("Error de conexión")
-        }
-
-      } catch (error) {
-        console.log("Error al conectar con el backend")
-      }
-    }
-    if (weddingSlug) fetchInvite()
-
-  }, [weddingSlug])
+ 
 
 
 
@@ -103,7 +83,7 @@ function App() {
         <Route path='/dashboard/editar/:weddingId' element={<WeddingEditor modo="edit" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} />} />
 
         <Route path='/plantilla' element={<InvitacionBoda template={true} />} />
-        <Route path='/invitacion/:weddingSlug' element={<InvitacionBoda template={false} weddingInvite={weddingInvite} />} />
+        <Route path='/invitacion/:weddingSlug' element={<InvitacionBoda template={false} />} />
 
       </Routes>
     </BrowserRouter>

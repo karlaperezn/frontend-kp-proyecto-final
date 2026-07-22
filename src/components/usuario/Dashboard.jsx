@@ -11,8 +11,22 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
             <div><h3>Logo</h3></div>
 
             <div className="navBar">
-                <p><strong>Panel RSVP</strong></p>
-                <Link to={`/invitacion-boda/${selectedWedding.slug}`}>Ver invitación</Link>
+                <p style={{cursor: "pointer"}}><strong>Panel RSVP</strong></p>
+
+                {selectedWedding && selectedWedding._id && (
+                    <Link to={`/invitacion/${selectedWedding.slug} `} target="_blank"
+                        rel="noopener noreferrer">Ver invitación</Link>
+                )}
+
+                {(!selectedWedding || !selectedWedding._id) && (
+                    <div className="tooltip-container">
+                        <p style={{color:"#d3cbbc", cursor: "default"}}>Ver invitación</p>
+                        <span className="tooltip-text">Primero elige una boda</span>
+                    </div>
+                )}
+
+
+
                 <p>|</p>
                 <Link className="strong">{fullName}</Link>
                 <div className="avatarProfile"><i className="fa-solid fa-user" /></div>

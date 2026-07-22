@@ -1,0 +1,108 @@
+#wedding-web {
+    font-family: var(--font-body-invite);
+    color: var(--color-2-invite);
+    overflow-x: hidden;
+}
+
+#wedding-web h1 {
+    font-family: var(--font-title-invite);
+    font-size: var(--h1-fontSize-invite);
+    font-weight: lighter;
+    line-height: 100%;
+}
+
+#wedding-web h2 {
+    font-family: var(--font-title-invite);
+    font-size: var(--h2-fontSize-invite);
+    font-weight: lighter;
+}
+
+#wedding-web h3 {
+    font-size: var(--font-sans-h3);
+    font-weight: lighter;
+}
+
+#wedding-web h4 {
+    font-size: var(--font-sans-h4);
+    font-weight: lighter;
+}
+
+/* HERO */
+#wedding-web #hero-row1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+/* COUNTDOWN */
+#wedding-web .countdown-box {
+    background-color: var(--color-1-invite);
+}
+
+
+/* UBICACION */
+#wedding-web .location-section {
+    background-color: var(--color-2-invite);
+    align-items: flex-start;
+}
+
+#wedding-web .divider-line {
+    border-left: 1px solid var(--color-1-invite);
+}
+
+#wedding-web .location-column {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 360px;
+    justify-content: space-between;
+    padding: 2.5rem;
+}
+
+#wedding-web .info-location {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+
+/* FORMULARIO */
+#wedding-web .rsvp-input,
+#wedding-web .rsvp-textarea {
+    color: var(--color-1-invite);
+}
+
+#wedding-web .rsvp-form input[type="checkbox"] {
+    accent-color: var(--color-1-invite);
+}
+
+#wedding-web .option-attending:hover label,
+#wedding-web .option-attending input[type="radio"]:checked+label {
+    border: 1px solid var(--color-1-invite);
+    background-color: var(--color-1-invite);
+}
+
+#wedding-web .rsvp-button {
+    font-family: var(--font-body-invite);
+    background-color: var(--color-1-invite);
+    border: 1px solid var(--color-1-invite);
+}
+
+#wedding-web .rsvp-button:hover {
+    border: 1px solid var(--color-2-invite);
+    background-color: var(--color-2-invite);
+}
+
+
+@media (max-width: 767px) {
+
+    #wedding-web .location-column {
+        width: 100%;
+    }
+
+    #wedding-web .divider-line {
+        border-left: none;
+        border-top: 1px solid var(--color-1-invite);
+    }
+
+}
