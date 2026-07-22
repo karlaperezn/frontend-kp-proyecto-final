@@ -34,11 +34,10 @@ export function WeddingEditor({ modo, weddingData, setWeddingData, selectedWeddi
             async function fetchWedding() {
                 const res = await doGet(`weddings/preview/${weddingId}`);
                 setWeddingData(res.wedding)
-                console.log(weddingData)
             }
             fetchWedding()
         }
-    }, [modo, weddingId, setWeddingData])
+    }, [modo, weddingId])
 
     async function saveWedding() {
         if (modo === "create") {
