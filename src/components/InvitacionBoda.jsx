@@ -26,6 +26,7 @@ export function InvitacionBoda({ template }) {
     }, [weddingSlug])
 
     const exampleWedding = {
+        weddingId: null,
         brideName: "María",
         groomName: "Pedro",
         eventDate: "2027-07-14",

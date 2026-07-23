@@ -134,6 +134,7 @@
 }
 
 .feedback-error {
+    font-size: var(--font-sans-small);
     color: rgb(180, 51, 51);
 }
 

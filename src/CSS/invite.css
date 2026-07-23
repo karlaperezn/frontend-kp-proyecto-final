@@ -76,10 +76,29 @@
     accent-color: var(--color-1-invite);
 }
 
+#wedding-web .option-attending {
+    width: 210px;
+}
+
 #wedding-web .option-attending:hover label,
 #wedding-web .option-attending input[type="radio"]:checked+label {
     border: 1px solid var(--color-1-invite);
     background-color: var(--color-1-invite);
+}
+
+#wedding-web .container-options-dietary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+
+    margin: 0.75rem 0;
+}
+
+#wedding-web .container-options-dietary label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 #wedding-web .rsvp-button {
@@ -103,6 +122,10 @@
     #wedding-web .divider-line {
         border-left: none;
         border-top: 1px solid var(--color-1-invite);
+    }
+
+    #wedding-web .option-attending {
+        width: 200px;
     }
 
 }

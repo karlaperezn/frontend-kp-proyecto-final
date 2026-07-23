@@ -29,7 +29,7 @@ export function FormWE() {
                 </div>
             </div>
             <div className="rsvp-field-form">
-                <label>Alergias y restricciones alimentarias</label>
+                <label>¿Tienes alergias y/o restricciones alimentarias?</label>
 
                 <div className="container-options-dietary">
                     <div className="dietary-column">

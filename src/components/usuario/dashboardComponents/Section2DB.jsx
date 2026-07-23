@@ -56,8 +56,10 @@ export function Section2DB({ guestsResponses }) {
         <div id="guest-dietary-list">
             <h4 className="h4-sans">Invitados con restricciones alimentarias ({dietary})</h4>
             <ul>
-                {guestsResponses.filter(g => g.dietaryRestrictions).map(g => {
-                    return <li>{g.fullName} - {g.dietaryRestrictions}</li>
+                {guestsResponses.filter(g => g.dietaryRestrictions && g.dietaryRestrictions.length > 0).map(g => {
+                    return <li>{g.fullName} - {Array.isArray(g.dietaryRestrictions) 
+                                ? g.dietaryRestrictions.join(", ") 
+                                : g.dietaryRestrictions}</li>
                 })}
 
             </ul>
