@@ -17,7 +17,7 @@ function App() {
     emailRegister: '',
     passwordRegister: ''
   })
-  
+
   //Log in
   const [emailLogin, setEmailLogin] = useState('');
   const [passwordLogin, setPasswordlLogin] = useState('');
@@ -33,16 +33,37 @@ function App() {
     async function fetchWeddings() {
       const userId = localStorage.getItem('id')
       const res = await doGet(`weddings/my-weddings/${userId}`)
-      setWeddings([...res.weddingsOwned, ...res.weddingCollabs])
+
+      const allWeddings = [...res.weddingsOwned, ...res.weddingCollabs]
+      setWeddings(allWeddings)
+
+      const savedId = localStorage.getItem("selectedWeddingId");
+      if (savedId) {
+        const weddingFound = allWeddings.find(w => w._id === savedId);
+
+        if (weddingFound) {
+          setSelectedWedding(weddingFound);
+        }
+      }
     }
     fetchWeddings()
   }, [])
 
   useEffect(() => {
+    if (!selectedWedding || !selectedWedding._id || Array.isArray(selectedWedding)) {
+    return;
+  }
     async function fetchGuestsResponses() {
-      const weddingId = selectedWedding._id;
-      const res = await doGet(`guests/show-responses/${weddingId}`)
-      setGuestsResponses(res.guestsResponses)
+      try {
+        const weddingId = selectedWedding._id;
+        const res = await doGet(`guests/show-responses/${weddingId}`)
+        if (res && res.guestsResponses) {
+        setGuestsResponses(res.guestsResponses);
+      }
+
+      } catch(error){
+         console.error("Error al cargar las respuestas de invitados:", error);
+      }
     }
     fetchGuestsResponses()
   }, [selectedWedding])
@@ -67,7 +88,9 @@ function App() {
       colors: ['#838969', '#414C3A']
     }
   })
- 
+
+  const [collabs, setCollabs] = useState([])
+
 
 
 
@@ -78,7 +101,7 @@ function App() {
         <Route path='/registrarse' element={<Registrarse valuesNewUser={valuesNewUser} setValuesNewUser={setValuesNewUser} />} />
         <Route path='/iniciar-sesion' element={<IniciarSesion emailLogin={emailLogin} setEmailLogin={setEmailLogin} passwordLogin={passwordLogin} setPasswordLogin={setPasswordlLogin} />} />
 
-        <Route path='/dashboard' element={<Dashboard weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />} />
+        <Route path='/dashboard' element={<Dashboard weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} collabs={collabs} setCollabs={setCollabs} />} />
         <Route path='/dashboard/nueva-boda' element={<WeddingEditor modo="create" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} />} />
         <Route path='/dashboard/editar/:weddingId' element={<WeddingEditor modo="edit" weddingData={weddingData} setWeddingData={setWeddingData} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} />} />
 

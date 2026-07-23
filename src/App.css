@@ -99,6 +99,11 @@
     background-color: transparent;
 }
 
+.button-small {
+    font-size: var(--font-sans-small);
+    padding: 4px 8px;
+}
+
 .button:hover {
     color: white;
     border: 1px solid var(--dark-olive-color);

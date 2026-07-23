@@ -4,7 +4,7 @@ import { Section1DB } from "./dashboardComponents/Section1DB";
 import { Section2DB } from "./dashboardComponents/Section2DB";
 
 
-export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses }) {
+export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses, collabs, setCollabs }) {
     const fullName = localStorage.getItem('fullName')
 
     return <>
@@ -36,7 +36,7 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
         </header>
 
 
-        <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />
-        <Section2DB guestsResponses={guestsResponses} selectedWedding={selectedWedding} />
+        <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} collabs={collabs} setCollabs={setCollabs} />
+        <Section2DB guestsResponses={guestsResponses} selectedWedding={selectedWedding} collabs={collabs} setCollabs={setCollabs} />
     </>
 }

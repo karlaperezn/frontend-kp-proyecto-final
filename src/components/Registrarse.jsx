@@ -35,6 +35,7 @@ export function Registrarse({ valuesNewUser, setValuesNewUser }) {
                 setMessage(res.message)
             }
         } catch (error) {
+            console.error(error);
             setStatus("negative")
             setMessage("Ocurrió un error al registrar el usuario")
         }

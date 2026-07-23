@@ -25,6 +25,7 @@ export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPas
             }
 
         } catch (error) {
+            console.error(error);
             setErrorMessage("Ocurrió un error al iniciar sesión")
         }
     }

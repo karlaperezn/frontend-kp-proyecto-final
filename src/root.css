@@ -67,6 +67,10 @@ select {
     border: 1px solid var(--almond-color);
 }
 
+input::placeholder {
+    color: rgb(202, 202, 202);
+}
+
 input[type="checkbox"] {
     width: 16px;
     height: 16px;

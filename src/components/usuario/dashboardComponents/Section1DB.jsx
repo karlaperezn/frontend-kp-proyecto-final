@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 
-export function Section1DB({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses }) {
+export function Section1DB({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses, collabs, setCollabs }) {
 
     function selectWedding(e) {
         let value = e.target.value;
         if (value === "") {
             setSelectedWedding([])
             setGuestsResponses([])
+            setCollabs([])
+            localStorage.removeItem("selectedWeddingId");
             return;
         }
+        setCollabs([])
         let wedding = weddings.find(w => w._id === value);
         setSelectedWedding(wedding)
+        localStorage.setItem("selectedWeddingId", value);
     }
 
     const totalResp = guestsResponses.filter(g => g._id).length.toString().padStart(2, '0');
@@ -25,7 +29,7 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
             <div id="dashbord-section-row2">
                 <div id="wedding-manager">
                     <div>
-                        <select onChange={selectWedding} id="dropdown-weddings">
+                        <select onChange={selectWedding} value={selectedWedding?._id || ""}id="dropdown-weddings">
                             <option value="">Elige una boda</option>
                             {weddings.map(w => {
                                 return <>
