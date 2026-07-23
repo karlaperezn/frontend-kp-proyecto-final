@@ -130,6 +130,7 @@
 }
 
 .feedback-success {
+    font-size: var(--font-sans-small);
     color: green;
 }
 

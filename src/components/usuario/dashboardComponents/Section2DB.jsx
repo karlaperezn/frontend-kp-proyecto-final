@@ -1,9 +1,11 @@
+import { Collabs } from "./Collabs";
 
-export function Section2DB({ guestsResponses }) {
+export function Section2DB({ guestsResponses, selectedWedding }) {
 
     const dietary = guestsResponses.filter(g => g.dietaryRestrictions).length.toString().padStart(2, '0');
 
     return <section id="section2-dashboard" className="section-row section-dasboard">
+        <div id="section2-col1">
         <div id="guests-table">
             <table>
                 <thead>
@@ -28,7 +30,6 @@ export function Section2DB({ guestsResponses }) {
                 })}
             </table>
         </div>
-
         <div id="guests-cards">
             {guestsResponses.map((g, i) => {
                 return <div className="guest-card">
@@ -51,15 +52,18 @@ export function Section2DB({ guestsResponses }) {
                 </div>
             })}
         </div>
+        <Collabs selectedWedding={selectedWedding} />
+        </div>
+
 
 
         <div id="guest-dietary-list">
             <h4 className="h4-sans">Invitados con restricciones alimentarias ({dietary})</h4>
             <ul>
                 {guestsResponses.filter(g => g.dietaryRestrictions && g.dietaryRestrictions.length > 0).map(g => {
-                    return <li>{g.fullName} - {Array.isArray(g.dietaryRestrictions) 
-                                ? g.dietaryRestrictions.join(", ") 
-                                : g.dietaryRestrictions}</li>
+                    return <li>{g.fullName} - {Array.isArray(g.dietaryRestrictions)
+                        ? g.dietaryRestrictions.join(", ")
+                        : g.dietaryRestrictions}</li>
                 })}
 
             </ul>

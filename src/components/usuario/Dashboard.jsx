@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Section1DB } from "./dashboardComponents/Section1DB";
 import { Section2DB } from "./dashboardComponents/Section2DB";
 
+
 export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses }) {
     const fullName = localStorage.getItem('fullName')
 
@@ -36,6 +37,6 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
 
 
         <Section1DB weddings={weddings} setWeddings={setWeddings} selectedWedding={selectedWedding} setSelectedWedding={setSelectedWedding} guestsResponses={guestsResponses} setGuestsResponses={setGuestsResponses} />
-        <Section2DB guestsResponses={guestsResponses} />
+        <Section2DB guestsResponses={guestsResponses} selectedWedding={selectedWedding} />
     </>
 }

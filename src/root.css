@@ -124,7 +124,12 @@ h5 {
     line-height: 100%;
 }
 
-.h3-sans, .h4-sans, .paragraph, .small-text, .xsmall-text {
+.h3-sans, .h4-sans {
+    font-family: var(--sans-font);
+    font-weight: 500;
+}
+
+.paragraph, .small-text, .xsmall-text {
     font-family: var(--sans-font);
     font-weight: 300;
 }

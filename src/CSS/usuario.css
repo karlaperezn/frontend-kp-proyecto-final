@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     column-gap: 0.5rem;
     margin: 1.25rem 0;
@@ -35,8 +35,8 @@
 .dashboard-actions {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1.5rem;
-
     font-weight: 400;
 }
 
@@ -103,12 +103,19 @@
 
 
 /* Dashboard Section 2 */
-#guests-table {
-    flex: 1 1 720px;
-    max-width: 100%;
+/* Col1Row1 respuesta invitados */
+#section2-col1 {
+    display: flex;
+    flex-direction: column;
+    width: 66.66%;
+    gap: 20px;
 }
 
-/* GUEST CARD */
+#guests-table {
+    width: 100%;
+    height: 333px;
+}
+
 #guests-cards {
     display: none;
 }
@@ -136,9 +143,38 @@
     border-radius: 4px;
 }
 
+/* Dashboard Section 2 */
+/* Col1Row2 Colaboradores */
+#collabs-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+#add-collad {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 4px;
+}
+
+#add-collad button {
+    height: 38px;
+}
+
+#add-collad input {
+    width: 300px;
+}
+
+#add-collad-field {
+    display: flex;
+    flex-direction: column;
+}
 
 
-/* GUEST DIETARY */
+/* Dashboard Section 2 */
+/* Col2 GUEST DIETARY */
 #guest-dietary-list {
     display: flex;
     flex-direction: column;
@@ -170,14 +206,20 @@
 }
 
 
+
 @media (max-width: 767px) {
 
     .section-dasboard {
         flex-wrap: wrap;
     }
 
+
     #dashbord-section-row2 {
         margin-bottom: 2rem;
+    }
+
+    #section2-col1 {
+        width: 100%;
     }
 
     #guests-table {
@@ -189,7 +231,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 10px;
+        gap: 2px;
     }
 
     .guest-card {
