@@ -5,7 +5,6 @@ import { doPost, doGet, doDelete } from "../../../services/api.services"
 export function Collabs({ selectedWedding, collabs, setCollabs }) {
     const [emailCollab, setEmailCollab] = useState("")
     const [message, setMessage] = useState('')
-    const userId = localStorage.getItem('id')
     const esAdmin = selectedWedding?.role === "admin";
 
     useEffect(() => {

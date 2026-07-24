@@ -7,7 +7,6 @@ import { Section2DB } from "./dashboardComponents/Section2DB";
 
 export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses, collabs, setCollabs }) {
     const fullName = localStorage.getItem('fullName');
-    const userId = localStorage.getItem('id');
     const esCollab = selectedWedding?.role === "viewer";
 
     async function leaveCollab(collabId) {
