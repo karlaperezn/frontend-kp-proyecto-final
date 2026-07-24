@@ -23,7 +23,7 @@ export function Collabs({ selectedWedding, collabs, setCollabs }) {
             }
         }
         fetchCollabs()
-    }, [selectedWedding])
+    }, [selectedWedding, setCollabs])
 
     async function addCollab() {
         setMessage("")
