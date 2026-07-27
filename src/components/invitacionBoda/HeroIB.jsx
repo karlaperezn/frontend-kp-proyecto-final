@@ -1,5 +1,5 @@
 
-export function HeroIB({ inviteValues}) {
+export function HeroIB({ inviteValues }) {
 
     return <>
         <div className="hero-section hero-background hero-wedding">
@@ -8,7 +8,12 @@ export function HeroIB({ inviteValues}) {
                 <div id="hero-row1">
                     <h4>Nos casamos</h4>
                     <h1>{inviteValues.brideName} & {inviteValues.groomName}</h1>
-                    <h4>{inviteValues.eventDate}</h4>
+                    <h4>{inviteValues.eventDate ? new Date(inviteValues.eventDate + "T00:00:00").toLocaleDateString('es-ES', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric'
+                    })
+                        : "Fecha no definida"}</h4>
                 </div>
 
                 <div id="hero-row2">

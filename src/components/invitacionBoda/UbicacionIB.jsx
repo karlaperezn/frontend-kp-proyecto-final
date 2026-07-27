@@ -1,5 +1,8 @@
 
 export function UbicacionIB({ inviteValues }) {
+    const textDate = new Date(inviteValues.eventDate).toLocaleDateString('es-Es', { weekday: 'long', day: 'numeric', month: 'long'
+    }).replace(',', '');
+    const formattedDate = textDate.charAt(0).toUpperCase() + textDate.slice(1);
 
     return <div id="location-section" className="section-row location-section">
 
@@ -11,7 +14,7 @@ export function UbicacionIB({ inviteValues }) {
                 <p>{inviteValues.ceremony.address}</p>
             </div>
 
-            <p>Lunes 17 de marzo - {inviteValues.ceremony.hour}</p>
+            <p>{formattedDate} - {inviteValues.ceremony.hour}</p>
 
         </div>
 
@@ -23,7 +26,7 @@ export function UbicacionIB({ inviteValues }) {
                 <p>{inviteValues.reception.address}</p>
             </div>
 
-            <p>Lunes 17 de marzo - {inviteValues.reception.hour}</p>
+            <p>{formattedDate} - {inviteValues.reception.hour}</p>
                 
         </div>
     </div>
