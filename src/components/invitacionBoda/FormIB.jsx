@@ -60,10 +60,16 @@ export function FormIB({ inviteValues }) {
             })
             if (res.status) {
                 setSendedMessage(true)
+                setFormGuestResponse({
+                    fullName: '',
+                    email: '',
+                    attending: null,
+                    dietaryRestrictions: [],
+                    guestMessage: ''
+                })
             }
 
         } catch (error) {
-            console.error(error);
             console.error(error);
         }
 

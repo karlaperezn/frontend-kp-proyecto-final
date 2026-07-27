@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
 export function Section1DB({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses, collabs, setCollabs }) {
+    const esAdmin = selectedWedding?.role === "admin";
+
+    const totalResp = guestsResponses.filter(g => g._id).length.toString().padStart(2, '0');
+    const confirmed = guestsResponses.filter(g => g.attending === true).length.toString().padStart(2, '0');
+    const declined = guestsResponses.filter(g => g.attending === false).length.toString().padStart(2, '0');
 
     function selectWedding(e) {
         let value = e.target.value;
@@ -17,9 +22,7 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
         localStorage.setItem("selectedWeddingId", value);
     }
 
-    const totalResp = guestsResponses.filter(g => g._id).length.toString().padStart(2, '0');
-    const confirmed = guestsResponses.filter(g => g.attending === true).length.toString().padStart(2, '0');
-    const declined = guestsResponses.filter(g => g.attending === false).length.toString().padStart(2, '0');
+    
 
     return <section className="section-row section-dasboard">
         <div>
@@ -42,7 +45,7 @@ export function Section1DB({ weddings, setWeddings, selectedWedding, setSelected
 
                     <Link to='/dashboard/nueva-boda' className="button button-alt2">Nueva invitación</Link>
                 </div>
-                {selectedWedding && selectedWedding._id && (<>
+                {selectedWedding && selectedWedding._id && esAdmin && (<>
                     <div className="dashboard-actions">
                         <Link to={`/dashboard/editar/${selectedWedding._id}`} ><i className="fa-regular fa-pen-to-square" /> Editar invitación</Link>
 
