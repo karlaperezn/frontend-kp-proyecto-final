@@ -1,13 +1,16 @@
 import "../../CSS/usuario.css"
 import { doDelete } from "../../services/api.services";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Section1DB } from "./dashboardComponents/Section1DB";
 import { Section2DB } from "./dashboardComponents/Section2DB";
+import { Cuenta } from "./popups/Cuenta";
 
 
 export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedWedding, guestsResponses, setGuestsResponses, collabs, setCollabs }) {
     const fullName = localStorage.getItem('fullName');
     const esCollab = selectedWedding?.role === "viewer";
+    const [showPopUp, setShowPopUp] = useState(false);
 
     async function leaveCollab(collabId) {
         try {
@@ -44,6 +47,10 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
         }
     }
 
+    function togglePopUp() {
+        setShowPopUp(!showPopUp)
+    }
+
     return <>
         <header id="header-dashboard" className="header">
             <div><h3>Logo</h3></div>
@@ -63,8 +70,10 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
                     </div>
                 )}
                 <p>|</p>
-                <Link className="strong">{fullName}</Link>
-                <div className="avatarProfile"><i className="fa-solid fa-user" /></div>
+                <div id="user-account-access" onClick={togglePopUp}>
+                    <p>{fullName}</p>
+                    <div className="avatarProfile"><i className="fa-solid fa-user" /></div>
+                </div>
             </div>
 
         </header>
@@ -80,5 +89,10 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
                 <button className="internal-link delete" onClick={() => deleteWedding(selectedWedding?._id)}>Eliminar invitación</button>
             )}
         </div>
+
+        {showPopUp && (
+            <Cuenta togglePopUp={togglePopUp} />
+        )}
+
     </>
 }

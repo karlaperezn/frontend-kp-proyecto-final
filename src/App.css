@@ -121,6 +121,15 @@
     background-color: var(--dark-olive-color);
 }
 
+.back-button i {
+    font-size: 32px;
+    color: var(--olive-color);
+}
+
+.back-button i:hover {
+    color: var(--dark-olive-color);
+}
+
 /* FORMULARIO ASSETS */
 
 .form,

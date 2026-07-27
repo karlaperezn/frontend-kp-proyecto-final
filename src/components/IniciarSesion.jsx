@@ -1,11 +1,17 @@
 import "../CSS/portal.css"
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { doPost } from "../services/api.services";
 
 export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPasswordLogin }) {
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('')
+
+    useEffect(() => {
+        if(localStorage.getItem('email')){
+            navigate('/dashboard')
+        }
+    }, [])
 
     async function login(e) {
         e.preventDefault()
