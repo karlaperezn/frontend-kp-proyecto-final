@@ -11,7 +11,7 @@ export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPas
         if(localStorage.getItem('email')){
             navigate('/dashboard')
         }
-    }, [])
+    }, [navigate])
 
     async function login(e) {
         e.preventDefault()
