@@ -25,6 +25,8 @@ export function IniciarSesion({ emailLogin, setEmailLogin, passwordLogin, setPas
 
             if (res.status) {
                 saveUser(res.user)
+                setEmailLogin('')
+                setPasswordLogin('')
                 navigate('/dashboard')
             } else {
                 setErrorMessage(res.message);
