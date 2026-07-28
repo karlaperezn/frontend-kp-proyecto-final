@@ -1,4 +1,4 @@
-Aplicación web multi-tenant para crear invitaciones de boda virtuales.
+#### Aplicación web multi-tenant para crear invitaciones de boda virtuales.
 Desarrollada con React en el frontend y Node.js/Express con MongoDB en el backend.
 
 Permite que cualquier usuario registrado cree su propia invitación de boda dentro de la plataforma, configurando los datos principales (nombres de los novios, fecha del evento, hora, ubicaciones y diseño de la invitación), e invitar a otros colaboradores, de momento, para visualizar las respuestas de los invitados en el panel de RSVP.
@@ -13,6 +13,7 @@ El flujo de acción del usuario es el siguiente:
 5- También puede añadir un colaborador con rol "viewer", y puede eliminar la colaboración haciendo clic en "quitar".
 6- En el navbar, al hacer clic en su nombre, accede a los ajustes de cuenta para editar la información de usuario, cerrar sesión o eliminar la cuenta.
 
+### Variable de entorno
+db = mongodb://admin:admin123@127.0.0.1:27017
 
-# Variable de entorno
-Mongo atlas = mongodb+srv://general:general1@cluster0.84ay04h.mongodb.net/?appName=Cluster0
+### usuario de prueba
