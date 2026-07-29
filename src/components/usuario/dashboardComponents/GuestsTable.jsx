@@ -29,7 +29,7 @@ export function GuestsTable({ guestsResponses }) {
                     {respuestasPagina.map((g, i) => {
                         return <tbody>
                             <tr>
-                                <td ><strong>{(i + 1).toString().padStart(2, '0')}</strong></td>
+                                <td ><strong>{(inicio + i + 1).toString().padStart(2, '0')}</strong></td>
                                 <td className="small-text">{g.fullName}</td>
                                 <td className="small-text">{g.email}</td>
                                 <td className="small-text">{g.attending ? <i class="fa-solid fa-circle-check" /> : <i class="fa-regular fa-circle-xmark" />}</td>
