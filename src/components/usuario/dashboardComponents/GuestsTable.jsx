@@ -1,30 +1,66 @@
+import { useState } from "react";
 
-export function GuestsTable({guestsResponses}) {
+export function GuestsTable({ guestsResponses }) {
+
+    const porPagina = 7;
+    const [pagina, setPagina] = useState(1);
+
+    const totalPaginas = Math.ceil(guestsResponses.length / porPagina);
+    const inicio = (pagina - 1) * porPagina;
+    const fin = inicio + porPagina;
+    const respuestasPagina = guestsResponses.slice(inicio, fin);
+
+    const esPrimeraPagina = pagina === 1;
+    const esUltimaPagina = pagina === totalPaginas || totalPaginas === 0;
 
     return <>
         <div id="guests-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th id="guest-index">NO.</th>
-                        <th className="title-table">NOMBRE</th>
-                        <th className="title-table"> CORREO ELECTRÓNICO</th>
-                        <th id="attending">ASISTENCIA</th>
-                        <th className="title-table">MENSAJE</th>
-                    </tr>
-                </thead>
-                {guestsResponses.map((g, i) => {
-                    return <tbody>
+            <div>
+                <table>
+                    <thead>
                         <tr>
-                            <td ><strong>{(i + 1).toString().padStart(2, '0')}</strong></td>
-                            <td className="small-text">{g.fullName}</td>
-                            <td className="small-text">{g.email}</td>
-                            <td className="small-text">{g.attending ? <i class="fa-solid fa-circle-check" /> : <i class="fa-regular fa-circle-xmark" />}</td>
-                            <td className="small-text">{g.guestMessage}</td>
+                            <th id="guest-index">NO.</th>
+                            <th className="title-table">NOMBRE</th>
+                            <th className="title-table"> CORREO ELECTRÓNICO</th>
+                            <th id="attending">ASISTENCIA</th>
+                            <th className="title-table">MENSAJE</th>
                         </tr>
-                    </tbody>
-                })}
-            </table>
+                    </thead>
+                    {respuestasPagina.map((g, i) => {
+                        return <tbody>
+                            <tr>
+                                <td ><strong>{(i + 1).toString().padStart(2, '0')}</strong></td>
+                                <td className="small-text">{g.fullName}</td>
+                                <td className="small-text">{g.email}</td>
+                                <td className="small-text">{g.attending ? <i class="fa-solid fa-circle-check" /> : <i class="fa-regular fa-circle-xmark" />}</td>
+                                <td className="small-text">{g.guestMessage}</td>
+                            </tr>
+                        </tbody>
+                    })}
+                </table>
+
+            </div>
+            <div id="container-buttons-guests-page">
+                <button
+                    className={`internal-link ${esPrimeraPagina ? 'disabled' : ''}`}
+                    disabled={esPrimeraPagina}
+                    onClick={() => setPagina(prev => prev - 1)}
+                >
+                    Anterior
+                </button>
+
+                <span className="small-text">
+                    Página {totalPaginas === 0 ? 0 : pagina} de {totalPaginas}
+                </span>
+
+                <button
+                    className={`internal-link ${esUltimaPagina ? 'disabled' : ''}`}
+                    disabled={esUltimaPagina}
+                    onClick={() => setPagina(prev => prev + 1)}
+                >
+                    Siguiente
+                </button>
+            </div>
         </div>
         <div id="guests-cards">
             {guestsResponses.map((g, i) => {
