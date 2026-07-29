@@ -91,7 +91,7 @@ export function Dashboard({ weddings, setWeddings, selectedWedding, setSelectedW
         </div>
 
         {showPopUp && (
-            <Cuenta togglePopUp={togglePopUp} />
+            <Cuenta togglePopUp={togglePopUp} setSelectedWedding={setSelectedWedding} />
         )}
 
     </>

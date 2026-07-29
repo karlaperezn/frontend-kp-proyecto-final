@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { doPut, doDelete } from "../../../services/api.services";
 
-export function Cuenta({ togglePopUp }) {
+export function Cuenta({ togglePopUp, setSelectedWedding }) {
     const fullName = localStorage.getItem('fullName');
     const email = localStorage.getItem('email');
     const userId = localStorage.getItem('id');
@@ -44,6 +44,7 @@ export function Cuenta({ togglePopUp }) {
 
     function logout() {
         localStorage.clear()
+        setSelectedWedding('')
         navigate('/iniciar-sesion')
     }
 
