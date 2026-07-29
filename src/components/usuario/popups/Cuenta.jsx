@@ -44,6 +44,7 @@ export function Cuenta({ togglePopUp, setSelectedWedding }) {
 
     function logout() {
         localStorage.clear()
+        sessionStorage.clear();
         setSelectedWedding('')
         navigate('/iniciar-sesion')
     }
